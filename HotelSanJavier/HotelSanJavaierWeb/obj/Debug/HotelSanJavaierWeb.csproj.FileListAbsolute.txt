@@ -56,3 +56,6 @@ C:\ProyectosGTI\Segundo\SegundoCuatri\ProyctoIngles\projecteIngles\HotelSanJavie
 C:\ProyectosGTI\Segundo\SegundoCuatri\ProyctoIngles\projecteIngles\HotelSanJavier\HotelSanJavaierWeb\obj\Debug\HotelSanJavaierWeb.csproj.CopyComplete
 C:\ProyectosGTI\Segundo\SegundoCuatri\ProyctoIngles\projecteIngles\HotelSanJavier\HotelSanJavaierWeb\obj\Debug\HotelSanJavaierWeb.dll
 C:\ProyectosGTI\Segundo\SegundoCuatri\ProyctoIngles\projecteIngles\HotelSanJavier\HotelSanJavaierWeb\obj\Debug\HotelSanJavaierWeb.pdb
+C:\ProyectosGTI\Segundo\SegundoCuatri\ProyctoIngles\projecteIngles\HotelSanJavier\HotelSanJavaierWeb\obj\Debug\HotelSanJavaierWeb.csprojAssemblyReference.cache
+C:\ProyectosGTI\Segundo\SegundoCuatri\ProyctoIngles\projecteIngles\HotelSanJavier\HotelSanJavaierWeb\bin\System.Data.SQLite.dll
+C:\ProyectosGTI\Segundo\SegundoCuatri\ProyctoIngles\projecteIngles\HotelSanJavier\HotelSanJavaierWeb\bin\System.Data.SQLite.xml

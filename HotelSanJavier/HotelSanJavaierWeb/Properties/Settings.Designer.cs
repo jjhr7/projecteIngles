@@ -27,9 +27,9 @@ namespace HotelSanJavaierWeb.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
         [global::System.Configuration.DefaultSettingValueAttribute("https://localhost:44384/HotelSanJavier.asmx")]
-        public string HotelSanJavaierWeb_localhost_HotelSanJavier {
+        public string HotelSanJavaierWeb_referencia1_HotelSanJavier {
             get {
-                return ((string)(this["HotelSanJavaierWeb_localhost_HotelSanJavier"]));
+                return ((string)(this["HotelSanJavaierWeb_referencia1_HotelSanJavier"]));
             }
         }
     }

@@ -4,7 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using HotelSanJavaierWeb.localhost;
+using HotelSanJavaierWeb.referencia1;
+using System.Data.SQLite;
+using System.Data;
 
 namespace HotelSanJavaierWeb
 {
@@ -18,7 +20,16 @@ namespace HotelSanJavaierWeb
         protected void Button1_Click(object sender, EventArgs e)
         {
             HotelSanJavier ws = new HotelSanJavier();
-            TextBox1.Text = ws.HelloWorld();
+
+            DataTable listaClientes = ws.getClients();
+
+            DataTable dt = ws.getClients();
+
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                TextBox1.Text = dr["name"].ToString();
+            }
         }
     }
 }
