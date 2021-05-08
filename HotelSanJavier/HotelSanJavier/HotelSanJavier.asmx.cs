@@ -65,15 +65,36 @@ namespace HotelSanJavier
                 dt.Load(reader);
                 conn.Close();
             }
-            if (dt.Rows.Count>0)
+
+            if (dt.Rows.Count > 0)
             {
                 return true;
 
             }
-            else {
+            else
+            {
                 return false;
             }
 
+        }
+
+        [WebMethod]
+        public DataTable getClient(string dni)
+        {
+            string DBpath = Server.MapPath("HotelSanJavier.db");
+
+            DataTable dt = new DataTable();
+
+            using (SQLiteConnection conn = new SQLiteConnection("Data Source=" + DBpath + ";Version=3;"))
+            {
+                conn.Open();
+                SQLiteCommand comm = new SQLiteCommand("SELECT * FROM clients WHERE `dni` = '" + dni + "' ;", conn);
+                SQLiteDataReader reader = comm.ExecuteReader();
+                dt.Load(reader);
+                conn.Close();
+            }
+
+            return dt;
 
         }
 

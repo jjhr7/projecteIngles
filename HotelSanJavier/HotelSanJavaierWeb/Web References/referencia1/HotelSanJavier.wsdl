@@ -44,6 +44,27 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="getClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dni" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getClientResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="loginReceptionist">
         <s:complexType>
           <s:sequence>
@@ -79,6 +100,12 @@
   <wsdl:message name="loginClientSoapOut">
     <wsdl:part name="parameters" element="tns:loginClientResponse" />
   </wsdl:message>
+  <wsdl:message name="getClientSoapIn">
+    <wsdl:part name="parameters" element="tns:getClient" />
+  </wsdl:message>
+  <wsdl:message name="getClientSoapOut">
+    <wsdl:part name="parameters" element="tns:getClientResponse" />
+  </wsdl:message>
   <wsdl:message name="loginReceptionistSoapIn">
     <wsdl:part name="parameters" element="tns:loginReceptionist" />
   </wsdl:message>
@@ -97,6 +124,10 @@
     <wsdl:operation name="loginClient">
       <wsdl:input message="tns:loginClientSoapIn" />
       <wsdl:output message="tns:loginClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getClient">
+      <wsdl:input message="tns:getClientSoapIn" />
+      <wsdl:output message="tns:getClientSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="loginReceptionist">
       <wsdl:input message="tns:loginReceptionistSoapIn" />
@@ -125,6 +156,15 @@
     </wsdl:operation>
     <wsdl:operation name="loginClient">
       <soap:operation soapAction="http://tempuri.org/loginClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClient">
+      <soap:operation soapAction="http://tempuri.org/getClient" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -164,6 +204,15 @@
     </wsdl:operation>
     <wsdl:operation name="loginClient">
       <soap12:operation soapAction="http://tempuri.org/loginClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClient">
+      <soap12:operation soapAction="http://tempuri.org/getClient" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

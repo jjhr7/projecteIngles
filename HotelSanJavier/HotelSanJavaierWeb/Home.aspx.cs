@@ -19,17 +19,7 @@ namespace HotelSanJavaierWeb
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            HotelSanJavier ws = new HotelSanJavier();
-
-            DataTable listaClientes = ws.getClients();
-
-            DataTable dt = ws.getClients();
-
-
-            foreach (DataRow dr in dt.Rows)
-            {
-                TextBox1.Text = dr["name"].ToString();
-            }
+            Response.Redirect("./LogIn.aspx");
         }
 
        

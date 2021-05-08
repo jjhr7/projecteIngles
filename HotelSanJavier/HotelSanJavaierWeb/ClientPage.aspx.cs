@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using HotelSanJavaierWeb.referencia1;
 
 namespace HotelSanJavaierWeb
 {
@@ -11,7 +12,11 @@ namespace HotelSanJavaierWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
+                string nameClient = Request.QueryString["idClient"];
+                Label1.Text = nameClient;
+           
+            
         }
     }
 }

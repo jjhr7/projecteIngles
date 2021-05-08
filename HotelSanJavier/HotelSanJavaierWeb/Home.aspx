@@ -15,7 +15,6 @@
         <div>
             <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click"  CssClass="btn-warning"/>
             <br/>
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
             <br />
         </div>
     </form>

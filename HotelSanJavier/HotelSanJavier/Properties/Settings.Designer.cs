@@ -22,15 +22,5 @@ namespace HotelSanJavier.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://localhost:44384/HotelSanJavier.asmx")]
-        public string HotelSanJavier_referencia1_HotelSanJavier {
-            get {
-                return ((string)(this["HotelSanJavier_referencia1_HotelSanJavier"]));
-            }
-        }
     }
 }

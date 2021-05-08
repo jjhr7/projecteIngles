@@ -22,10 +22,30 @@ namespace HotelSanJavaierWeb
 
             string dniC = dniClient.Text;
             string passwordC = passwordClient.Text;
-
+            
             bool existe = ws.loginClient(dniC,passwordC);
+            DataTable clientData;
 
-            TextBox3.Text = existe + "";
+            if (existe)
+            {
+                string idClient ="";
+                clientData = ws.getClient(dniC);
+                
+
+
+                foreach (DataRow dr in clientData.Rows)
+                {
+                    idClient = dr["id"].ToString();
+                    
+                }
+                
+                 
+                Response.Redirect("./ClientPage.aspx?idClient="+idClient);
+            }
+            else
+            {
+                TextBox3.Text = existe + "";
+            }
 
 
         }

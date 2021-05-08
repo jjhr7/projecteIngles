@@ -71,7 +71,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ClientPage.aspx" />
-    <None Include="Web References\referencia1\HotelSanJavier.disco" />
     <Content Include="LogIn.aspx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -79,12 +78,13 @@
     </None>
     <Content Include="Home.aspx" />
     <Content Include="main.css" />
+    <None Include="Web References\referencia1\HotelSanJavier.disco" />
     <Content Include="Web.config" />
     <None Include="Web References\referencia1\HotelSanJavier.wsdl" />
-    <None Include="Web References\referencia1\Reference.map">
+    <Content Include="Web References\referencia1\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Home.aspx.cs">
@@ -100,11 +100,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Web References\referencia1\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
     <Compile Include="LogIn.aspx.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -118,6 +113,11 @@
     </Compile>
     <Compile Include="ClientPage.aspx.designer.cs">
       <DependentUpon>ClientPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\referencia1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
