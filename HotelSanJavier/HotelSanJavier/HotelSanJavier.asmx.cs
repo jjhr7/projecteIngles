@@ -125,5 +125,25 @@ namespace HotelSanJavier
 
 
         }
+
+        [WebMethod]
+        public DataTable getReservetionsByClient(string dniClient)
+        {
+            string DBpath = Server.MapPath("HotelSanJavier.db");
+
+            DataTable dt = new DataTable();
+
+            using (SQLiteConnection conn = new SQLiteConnection("Data Source=" + DBpath + ";Version=3;"))
+            {
+                conn.Open();
+                SQLiteCommand comm = new SQLiteCommand("SELECT * FROM reservations WHERE `dni_client` = '" + dniClient + "' ;", conn);
+                SQLiteDataReader reader = comm.ExecuteReader();
+                dt.Load(reader);
+                conn.Close();
+            }
+            return dt;
+
+
+        }
     }
 }

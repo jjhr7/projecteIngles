@@ -40,6 +40,8 @@ namespace HotelSanJavaierWeb.referencia1 {
         
         private System.Threading.SendOrPostCallback loginReceptionistOperationCompleted;
         
+        private System.Threading.SendOrPostCallback getReservetionsByClientOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -92,6 +94,9 @@ namespace HotelSanJavaierWeb.referencia1 {
         
         /// <remarks/>
         public event loginReceptionistCompletedEventHandler loginReceptionistCompleted;
+        
+        /// <remarks/>
+        public event getReservetionsByClientCompletedEventHandler getReservetionsByClientCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/HelloWorld", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -235,6 +240,35 @@ namespace HotelSanJavaierWeb.referencia1 {
             if ((this.loginReceptionistCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.loginReceptionistCompleted(this, new loginReceptionistCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/getReservetionsByClient", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable getReservetionsByClient(string dniClient) {
+            object[] results = this.Invoke("getReservetionsByClient", new object[] {
+                        dniClient});
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getReservetionsByClientAsync(string dniClient) {
+            this.getReservetionsByClientAsync(dniClient, null);
+        }
+        
+        /// <remarks/>
+        public void getReservetionsByClientAsync(string dniClient, object userState) {
+            if ((this.getReservetionsByClientOperationCompleted == null)) {
+                this.getReservetionsByClientOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetReservetionsByClientOperationCompleted);
+            }
+            this.InvokeAsync("getReservetionsByClient", new object[] {
+                        dniClient}, this.getReservetionsByClientOperationCompleted, userState);
+        }
+        
+        private void OngetReservetionsByClientOperationCompleted(object arg) {
+            if ((this.getReservetionsByClientCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getReservetionsByClientCompleted(this, new getReservetionsByClientCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -383,6 +417,32 @@ namespace HotelSanJavaierWeb.referencia1 {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void getReservetionsByClientCompletedEventHandler(object sender, getReservetionsByClientCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getReservetionsByClientCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getReservetionsByClientCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
             }
         }
     }

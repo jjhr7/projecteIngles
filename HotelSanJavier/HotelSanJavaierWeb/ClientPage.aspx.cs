@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using HotelSanJavaierWeb.referencia1;
+using System.Data;
+using System.Windows.Forms;
 
 namespace HotelSanJavaierWeb
 {
@@ -12,11 +14,25 @@ namespace HotelSanJavaierWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-                string nameClient = Request.QueryString["idClient"];
-                Label1.Text = nameClient;
-           
-            
+            HotelSanJavier ws = new HotelSanJavier();
+            string dniClient = Request.QueryString["dniClient"];
+            string idReserves="";
+            Label1.Text = dniClient;
+
+            DataTable listReservas = ws.getReservetionsByClient(dniClient);
+
+            foreach (DataRow dr in listReservas.Rows)
+            {
+                idReserves += dr["id"].ToString();
+
+            }
+            Label1.Text = idReserves;
+
+            //HtmlDocument doc = WebBrowser.Document;
+
+
+
+
         }
     }
 }

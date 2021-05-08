@@ -28,19 +28,19 @@ namespace HotelSanJavaierWeb
 
             if (existe)
             {
-                string idClient ="";
+                string dniClient ="";
                 clientData = ws.getClient(dniC);
                 
 
 
                 foreach (DataRow dr in clientData.Rows)
                 {
-                    idClient = dr["id"].ToString();
+                    dniClient = dr["dni"].ToString();
                     
                 }
                 
                  
-                Response.Redirect("./ClientPage.aspx?idClient="+idClient);
+                Response.Redirect("./ClientPage.aspx?dniClient=" + dniClient);
             }
             else
             {
