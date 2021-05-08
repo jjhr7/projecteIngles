@@ -98,6 +98,28 @@ namespace HotelSanJavier
 
         }
 
+
+        [WebMethod]
+        public DataTable getReceptionist(string dni)
+        {
+            string DBpath = Server.MapPath("HotelSanJavier.db");
+
+            DataTable dt = new DataTable();
+
+            using (SQLiteConnection conn = new SQLiteConnection("Data Source=" + DBpath + ";Version=3;"))
+            {
+                conn.Open();
+                SQLiteCommand comm = new SQLiteCommand("SELECT * FROM recepcionists WHERE `dni` = '" + dni + "' ;", conn);
+                SQLiteDataReader reader = comm.ExecuteReader();
+                dt.Load(reader);
+
+                conn.Close();
+              
+            }
+
+            return dt;
+
+        }
         [WebMethod]
         public bool loginReceptionist(string dni, string password)
         {
@@ -143,6 +165,207 @@ namespace HotelSanJavier
             }
             return dt;
 
+
+        }
+
+
+        [WebMethod]
+        public DataTable getReservetionsByReceptionist(string idReceptionist)
+        {
+            string DBpath = Server.MapPath("HotelSanJavier.db");
+
+            DataTable dt = new DataTable();
+
+            using (SQLiteConnection conn = new SQLiteConnection("Data Source=" + DBpath + ";Version=3;"))
+            {
+                    conn.Open();
+                    SQLiteCommand comm = new SQLiteCommand("SELECT * FROM reservations WHERE `id_receptionist` = '" + idReceptionist + "' ;", conn);
+                    SQLiteDataReader reader = comm.ExecuteReader();
+                    dt.Load(reader);
+                    conn.Close();
+            }
+            return dt;
+
+
+        }
+
+        [WebMethod]
+        public DataTable getAllReservetions()
+        {
+            string DBpath = Server.MapPath("HotelSanJavier.db");
+
+            DataTable dt = new DataTable();
+
+            using (SQLiteConnection conn = new SQLiteConnection("Data Source=" + DBpath + ";Version=3;"))
+            {
+                conn.Open();
+                SQLiteCommand comm = new SQLiteCommand("SELECT * FROM reservations ;", conn);
+                SQLiteDataReader reader = comm.ExecuteReader();
+                dt.Load(reader);
+                conn.Close();
+            }
+            return dt;
+
+        }
+
+        [WebMethod]
+        public void addReservation()
+        {
+            string DBpath = Server.MapPath("HotelSanJavier.db");
+
+            DataTable dt = new DataTable();
+
+            using (SQLiteConnection conn = new SQLiteConnection("Data Source=" + DBpath + ";Version=3;"))
+            {
+                conn.Open();
+                SQLiteCommand comm = new SQLiteCommand("SELECT * FROM reservations ;", conn);
+                SQLiteDataReader reader = comm.ExecuteReader();
+                dt.Load(reader);
+                conn.Close();
+            }
+        }
+
+        [WebMethod]
+        public void addClient()
+        {
+            string DBpath = Server.MapPath("HotelSanJavier.db");
+
+            DataTable dt = new DataTable();
+
+            using (SQLiteConnection conn = new SQLiteConnection("Data Source=" + DBpath + ";Version=3;"))
+            {
+                conn.Open();
+                SQLiteCommand comm = new SQLiteCommand("SELECT * FROM reservations ;", conn);
+                SQLiteDataReader reader = comm.ExecuteReader();
+                dt.Load(reader);
+                conn.Close();
+            }
+        }
+
+        [WebMethod]
+        public void addRecepcionists(string name, string surname, string dni, int rol, string password)
+        {
+            string DBpath = Server.MapPath("HotelSanJavier.db");
+
+            DataTable dt = new DataTable();
+
+            using (SQLiteConnection conn = new SQLiteConnection("Data Source=" + DBpath + ";Version=3;"))
+            {
+                conn.Open();
+                SQLiteCommand comm = new SQLiteCommand("INSERT INTO recepcionists(name,last_name,dni,rol,password) VALUES('"+name+"', '"+surname+"', '"+dni+"', "+rol+", '"+password+"');", conn);
+                SQLiteDataReader reader = comm.ExecuteReader();
+                dt.Load(reader);
+                conn.Close();
+            }
+
+        }
+
+        [WebMethod]
+        public void editRecepcionists()
+        {
+            string DBpath = Server.MapPath("HotelSanJavier.db");
+
+            DataTable dt = new DataTable();
+
+            using (SQLiteConnection conn = new SQLiteConnection("Data Source=" + DBpath + ";Version=3;"))
+            {
+                conn.Open();
+                SQLiteCommand comm = new SQLiteCommand("SELECT * FROM reservations ;", conn);
+                SQLiteDataReader reader = comm.ExecuteReader();
+                dt.Load(reader);
+                conn.Close();
+            }
+
+        }
+
+        [WebMethod]
+        public void editClient()
+        {
+            string DBpath = Server.MapPath("HotelSanJavier.db");
+
+            DataTable dt = new DataTable();
+
+            using (SQLiteConnection conn = new SQLiteConnection("Data Source=" + DBpath + ";Version=3;"))
+            {
+                conn.Open();
+                SQLiteCommand comm = new SQLiteCommand("SELECT * FROM reservations ;", conn);
+                SQLiteDataReader reader = comm.ExecuteReader();
+                dt.Load(reader);
+                conn.Close();
+            }
+
+        }
+
+        [WebMethod]
+        public void editReservation()
+        {
+            string DBpath = Server.MapPath("HotelSanJavier.db");
+
+            DataTable dt = new DataTable();
+
+            using (SQLiteConnection conn = new SQLiteConnection("Data Source=" + DBpath + ";Version=3;"))
+            {
+                conn.Open();
+                SQLiteCommand comm = new SQLiteCommand("SELECT * FROM reservations ;", conn);
+                SQLiteDataReader reader = comm.ExecuteReader();
+                dt.Load(reader);
+                conn.Close();
+            }
+
+        }
+
+        [WebMethod]
+        public void removeRecepcionists()
+        {
+            string DBpath = Server.MapPath("HotelSanJavier.db");
+
+            DataTable dt = new DataTable();
+
+            using (SQLiteConnection conn = new SQLiteConnection("Data Source=" + DBpath + ";Version=3;"))
+            {
+                conn.Open();
+                SQLiteCommand comm = new SQLiteCommand("SELECT * FROM reservations ;", conn);
+                SQLiteDataReader reader = comm.ExecuteReader();
+                dt.Load(reader);
+                conn.Close();
+            }
+
+        }
+
+        [WebMethod]
+        public void removeClient()
+        {
+            string DBpath = Server.MapPath("HotelSanJavier.db");
+
+            DataTable dt = new DataTable();
+
+            using (SQLiteConnection conn = new SQLiteConnection("Data Source=" + DBpath + ";Version=3;"))
+            {
+                conn.Open();
+                SQLiteCommand comm = new SQLiteCommand("SELECT * FROM reservations ;", conn);
+                SQLiteDataReader reader = comm.ExecuteReader();
+                dt.Load(reader);
+                conn.Close();
+            }
+
+        }
+
+
+        [WebMethod]
+        public void removeReservation()
+        {
+            string DBpath = Server.MapPath("HotelSanJavier.db");
+
+            DataTable dt = new DataTable();
+
+            using (SQLiteConnection conn = new SQLiteConnection("Data Source=" + DBpath + ";Version=3;"))
+            {
+                conn.Open();
+                SQLiteCommand comm = new SQLiteCommand("SELECT * FROM reservations ;", conn);
+                SQLiteDataReader reader = comm.ExecuteReader();
+                dt.Load(reader);
+                conn.Close();
+            }
 
         }
     }

@@ -61,6 +61,30 @@ namespace HotelSanJavaierWeb
             bool existe = ws.loginReceptionist(dniR, passwordR);
 
             TextBox4.Text = existe + "";
+
+            DataTable receptionistData;
+
+            if (existe)
+            {
+              
+                string idReceptionist = "";
+                receptionistData = ws.getReceptionist(dniR);
+
+
+
+                foreach (DataRow dr in receptionistData.Rows)
+                {
+                    idReceptionist = dr["id"].ToString();
+
+                }
+
+                Response.Redirect("./ReceptionistPage.aspx?idReceptionist=" + idReceptionist);
+   
+            }
+            else
+            {
+                TextBox4.Text = existe + "";
+            }
         }
     }
 }

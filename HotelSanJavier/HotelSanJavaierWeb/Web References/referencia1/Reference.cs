@@ -38,9 +38,33 @@ namespace HotelSanJavaierWeb.referencia1 {
         
         private System.Threading.SendOrPostCallback getClientOperationCompleted;
         
+        private System.Threading.SendOrPostCallback getReceptionistOperationCompleted;
+        
         private System.Threading.SendOrPostCallback loginReceptionistOperationCompleted;
         
         private System.Threading.SendOrPostCallback getReservetionsByClientOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getReservetionsByReceptionistOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getAllReservetionsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback addReservationOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback addClientOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback addRecepcionistsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback editRecepcionistsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback editClientOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback editReservationOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback removeRecepcionistsOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback removeClientOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback removeReservationOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -93,10 +117,46 @@ namespace HotelSanJavaierWeb.referencia1 {
         public event getClientCompletedEventHandler getClientCompleted;
         
         /// <remarks/>
+        public event getReceptionistCompletedEventHandler getReceptionistCompleted;
+        
+        /// <remarks/>
         public event loginReceptionistCompletedEventHandler loginReceptionistCompleted;
         
         /// <remarks/>
         public event getReservetionsByClientCompletedEventHandler getReservetionsByClientCompleted;
+        
+        /// <remarks/>
+        public event getReservetionsByReceptionistCompletedEventHandler getReservetionsByReceptionistCompleted;
+        
+        /// <remarks/>
+        public event getAllReservetionsCompletedEventHandler getAllReservetionsCompleted;
+        
+        /// <remarks/>
+        public event addReservationCompletedEventHandler addReservationCompleted;
+        
+        /// <remarks/>
+        public event addClientCompletedEventHandler addClientCompleted;
+        
+        /// <remarks/>
+        public event addRecepcionistsCompletedEventHandler addRecepcionistsCompleted;
+        
+        /// <remarks/>
+        public event editRecepcionistsCompletedEventHandler editRecepcionistsCompleted;
+        
+        /// <remarks/>
+        public event editClientCompletedEventHandler editClientCompleted;
+        
+        /// <remarks/>
+        public event editReservationCompletedEventHandler editReservationCompleted;
+        
+        /// <remarks/>
+        public event removeRecepcionistsCompletedEventHandler removeRecepcionistsCompleted;
+        
+        /// <remarks/>
+        public event removeClientCompletedEventHandler removeClientCompleted;
+        
+        /// <remarks/>
+        public event removeReservationCompletedEventHandler removeReservationCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/HelloWorld", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -213,6 +273,35 @@ namespace HotelSanJavaierWeb.referencia1 {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/getReceptionist", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable getReceptionist(string dni) {
+            object[] results = this.Invoke("getReceptionist", new object[] {
+                        dni});
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getReceptionistAsync(string dni) {
+            this.getReceptionistAsync(dni, null);
+        }
+        
+        /// <remarks/>
+        public void getReceptionistAsync(string dni, object userState) {
+            if ((this.getReceptionistOperationCompleted == null)) {
+                this.getReceptionistOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetReceptionistOperationCompleted);
+            }
+            this.InvokeAsync("getReceptionist", new object[] {
+                        dni}, this.getReceptionistOperationCompleted, userState);
+        }
+        
+        private void OngetReceptionistOperationCompleted(object arg) {
+            if ((this.getReceptionistCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getReceptionistCompleted(this, new getReceptionistCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/loginReceptionist", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public bool loginReceptionist(string dni, string password) {
             object[] results = this.Invoke("loginReceptionist", new object[] {
@@ -269,6 +358,306 @@ namespace HotelSanJavaierWeb.referencia1 {
             if ((this.getReservetionsByClientCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.getReservetionsByClientCompleted(this, new getReservetionsByClientCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/getReservetionsByReceptionist", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable getReservetionsByReceptionist(string idReceptionist) {
+            object[] results = this.Invoke("getReservetionsByReceptionist", new object[] {
+                        idReceptionist});
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getReservetionsByReceptionistAsync(string idReceptionist) {
+            this.getReservetionsByReceptionistAsync(idReceptionist, null);
+        }
+        
+        /// <remarks/>
+        public void getReservetionsByReceptionistAsync(string idReceptionist, object userState) {
+            if ((this.getReservetionsByReceptionistOperationCompleted == null)) {
+                this.getReservetionsByReceptionistOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetReservetionsByReceptionistOperationCompleted);
+            }
+            this.InvokeAsync("getReservetionsByReceptionist", new object[] {
+                        idReceptionist}, this.getReservetionsByReceptionistOperationCompleted, userState);
+        }
+        
+        private void OngetReservetionsByReceptionistOperationCompleted(object arg) {
+            if ((this.getReservetionsByReceptionistCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getReservetionsByReceptionistCompleted(this, new getReservetionsByReceptionistCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/getAllReservetions", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable getAllReservetions() {
+            object[] results = this.Invoke("getAllReservetions", new object[0]);
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getAllReservetionsAsync() {
+            this.getAllReservetionsAsync(null);
+        }
+        
+        /// <remarks/>
+        public void getAllReservetionsAsync(object userState) {
+            if ((this.getAllReservetionsOperationCompleted == null)) {
+                this.getAllReservetionsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetAllReservetionsOperationCompleted);
+            }
+            this.InvokeAsync("getAllReservetions", new object[0], this.getAllReservetionsOperationCompleted, userState);
+        }
+        
+        private void OngetAllReservetionsOperationCompleted(object arg) {
+            if ((this.getAllReservetionsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getAllReservetionsCompleted(this, new getAllReservetionsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/addReservation", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void addReservation() {
+            this.Invoke("addReservation", new object[0]);
+        }
+        
+        /// <remarks/>
+        public void addReservationAsync() {
+            this.addReservationAsync(null);
+        }
+        
+        /// <remarks/>
+        public void addReservationAsync(object userState) {
+            if ((this.addReservationOperationCompleted == null)) {
+                this.addReservationOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddReservationOperationCompleted);
+            }
+            this.InvokeAsync("addReservation", new object[0], this.addReservationOperationCompleted, userState);
+        }
+        
+        private void OnaddReservationOperationCompleted(object arg) {
+            if ((this.addReservationCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.addReservationCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/addClient", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void addClient() {
+            this.Invoke("addClient", new object[0]);
+        }
+        
+        /// <remarks/>
+        public void addClientAsync() {
+            this.addClientAsync(null);
+        }
+        
+        /// <remarks/>
+        public void addClientAsync(object userState) {
+            if ((this.addClientOperationCompleted == null)) {
+                this.addClientOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddClientOperationCompleted);
+            }
+            this.InvokeAsync("addClient", new object[0], this.addClientOperationCompleted, userState);
+        }
+        
+        private void OnaddClientOperationCompleted(object arg) {
+            if ((this.addClientCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.addClientCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/addRecepcionists", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void addRecepcionists(string name, string surname, string dni, int rol, string password) {
+            this.Invoke("addRecepcionists", new object[] {
+                        name,
+                        surname,
+                        dni,
+                        rol,
+                        password});
+        }
+        
+        /// <remarks/>
+        public void addRecepcionistsAsync(string name, string surname, string dni, int rol, string password) {
+            this.addRecepcionistsAsync(name, surname, dni, rol, password, null);
+        }
+        
+        /// <remarks/>
+        public void addRecepcionistsAsync(string name, string surname, string dni, int rol, string password, object userState) {
+            if ((this.addRecepcionistsOperationCompleted == null)) {
+                this.addRecepcionistsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddRecepcionistsOperationCompleted);
+            }
+            this.InvokeAsync("addRecepcionists", new object[] {
+                        name,
+                        surname,
+                        dni,
+                        rol,
+                        password}, this.addRecepcionistsOperationCompleted, userState);
+        }
+        
+        private void OnaddRecepcionistsOperationCompleted(object arg) {
+            if ((this.addRecepcionistsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.addRecepcionistsCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/editRecepcionists", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void editRecepcionists() {
+            this.Invoke("editRecepcionists", new object[0]);
+        }
+        
+        /// <remarks/>
+        public void editRecepcionistsAsync() {
+            this.editRecepcionistsAsync(null);
+        }
+        
+        /// <remarks/>
+        public void editRecepcionistsAsync(object userState) {
+            if ((this.editRecepcionistsOperationCompleted == null)) {
+                this.editRecepcionistsOperationCompleted = new System.Threading.SendOrPostCallback(this.OneditRecepcionistsOperationCompleted);
+            }
+            this.InvokeAsync("editRecepcionists", new object[0], this.editRecepcionistsOperationCompleted, userState);
+        }
+        
+        private void OneditRecepcionistsOperationCompleted(object arg) {
+            if ((this.editRecepcionistsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.editRecepcionistsCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/editClient", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void editClient() {
+            this.Invoke("editClient", new object[0]);
+        }
+        
+        /// <remarks/>
+        public void editClientAsync() {
+            this.editClientAsync(null);
+        }
+        
+        /// <remarks/>
+        public void editClientAsync(object userState) {
+            if ((this.editClientOperationCompleted == null)) {
+                this.editClientOperationCompleted = new System.Threading.SendOrPostCallback(this.OneditClientOperationCompleted);
+            }
+            this.InvokeAsync("editClient", new object[0], this.editClientOperationCompleted, userState);
+        }
+        
+        private void OneditClientOperationCompleted(object arg) {
+            if ((this.editClientCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.editClientCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/editReservation", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void editReservation() {
+            this.Invoke("editReservation", new object[0]);
+        }
+        
+        /// <remarks/>
+        public void editReservationAsync() {
+            this.editReservationAsync(null);
+        }
+        
+        /// <remarks/>
+        public void editReservationAsync(object userState) {
+            if ((this.editReservationOperationCompleted == null)) {
+                this.editReservationOperationCompleted = new System.Threading.SendOrPostCallback(this.OneditReservationOperationCompleted);
+            }
+            this.InvokeAsync("editReservation", new object[0], this.editReservationOperationCompleted, userState);
+        }
+        
+        private void OneditReservationOperationCompleted(object arg) {
+            if ((this.editReservationCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.editReservationCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/removeRecepcionists", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void removeRecepcionists() {
+            this.Invoke("removeRecepcionists", new object[0]);
+        }
+        
+        /// <remarks/>
+        public void removeRecepcionistsAsync() {
+            this.removeRecepcionistsAsync(null);
+        }
+        
+        /// <remarks/>
+        public void removeRecepcionistsAsync(object userState) {
+            if ((this.removeRecepcionistsOperationCompleted == null)) {
+                this.removeRecepcionistsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnremoveRecepcionistsOperationCompleted);
+            }
+            this.InvokeAsync("removeRecepcionists", new object[0], this.removeRecepcionistsOperationCompleted, userState);
+        }
+        
+        private void OnremoveRecepcionistsOperationCompleted(object arg) {
+            if ((this.removeRecepcionistsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.removeRecepcionistsCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/removeClient", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void removeClient() {
+            this.Invoke("removeClient", new object[0]);
+        }
+        
+        /// <remarks/>
+        public void removeClientAsync() {
+            this.removeClientAsync(null);
+        }
+        
+        /// <remarks/>
+        public void removeClientAsync(object userState) {
+            if ((this.removeClientOperationCompleted == null)) {
+                this.removeClientOperationCompleted = new System.Threading.SendOrPostCallback(this.OnremoveClientOperationCompleted);
+            }
+            this.InvokeAsync("removeClient", new object[0], this.removeClientOperationCompleted, userState);
+        }
+        
+        private void OnremoveClientOperationCompleted(object arg) {
+            if ((this.removeClientCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.removeClientCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/removeReservation", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void removeReservation() {
+            this.Invoke("removeReservation", new object[0]);
+        }
+        
+        /// <remarks/>
+        public void removeReservationAsync() {
+            this.removeReservationAsync(null);
+        }
+        
+        /// <remarks/>
+        public void removeReservationAsync(object userState) {
+            if ((this.removeReservationOperationCompleted == null)) {
+                this.removeReservationOperationCompleted = new System.Threading.SendOrPostCallback(this.OnremoveReservationOperationCompleted);
+            }
+            this.InvokeAsync("removeReservation", new object[0], this.removeReservationOperationCompleted, userState);
+        }
+        
+        private void OnremoveReservationOperationCompleted(object arg) {
+            if ((this.removeReservationCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.removeReservationCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -397,6 +786,32 @@ namespace HotelSanJavaierWeb.referencia1 {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void getReceptionistCompletedEventHandler(object sender, getReceptionistCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getReceptionistCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getReceptionistCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void loginReceptionistCompletedEventHandler(object sender, loginReceptionistCompletedEventArgs e);
     
     /// <remarks/>
@@ -446,6 +861,94 @@ namespace HotelSanJavaierWeb.referencia1 {
             }
         }
     }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void getReservetionsByReceptionistCompletedEventHandler(object sender, getReservetionsByReceptionistCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getReservetionsByReceptionistCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getReservetionsByReceptionistCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void getAllReservetionsCompletedEventHandler(object sender, getAllReservetionsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getAllReservetionsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getAllReservetionsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void addReservationCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void addClientCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void addRecepcionistsCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void editRecepcionistsCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void editClientCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void editReservationCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void removeRecepcionistsCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void removeClientCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void removeReservationCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
 }
 
 #pragma warning restore 1591

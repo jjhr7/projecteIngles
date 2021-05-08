@@ -65,6 +65,27 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="getReceptionist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dni" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getReceptionistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getReceptionistResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="loginReceptionist">
         <s:complexType>
           <s:sequence>
@@ -101,6 +122,106 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="getReservetionsByReceptionist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idReceptionist" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getReservetionsByReceptionistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getReservetionsByReceptionistResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAllReservetions">
+        <s:complexType />
+      </s:element>
+      <s:element name="getAllReservetionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAllReservetionsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addReservation">
+        <s:complexType />
+      </s:element>
+      <s:element name="addReservationResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="addClient">
+        <s:complexType />
+      </s:element>
+      <s:element name="addClientResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="addRecepcionists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="surname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dni" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rol" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addRecepcionistsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="editRecepcionists">
+        <s:complexType />
+      </s:element>
+      <s:element name="editRecepcionistsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="editClient">
+        <s:complexType />
+      </s:element>
+      <s:element name="editClientResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="editReservation">
+        <s:complexType />
+      </s:element>
+      <s:element name="editReservationResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="removeRecepcionists">
+        <s:complexType />
+      </s:element>
+      <s:element name="removeRecepcionistsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="removeClient">
+        <s:complexType />
+      </s:element>
+      <s:element name="removeClientResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="removeReservation">
+        <s:complexType />
+      </s:element>
+      <s:element name="removeReservationResponse">
+        <s:complexType />
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HelloWorldSoapIn">
@@ -127,6 +248,12 @@
   <wsdl:message name="getClientSoapOut">
     <wsdl:part name="parameters" element="tns:getClientResponse" />
   </wsdl:message>
+  <wsdl:message name="getReceptionistSoapIn">
+    <wsdl:part name="parameters" element="tns:getReceptionist" />
+  </wsdl:message>
+  <wsdl:message name="getReceptionistSoapOut">
+    <wsdl:part name="parameters" element="tns:getReceptionistResponse" />
+  </wsdl:message>
   <wsdl:message name="loginReceptionistSoapIn">
     <wsdl:part name="parameters" element="tns:loginReceptionist" />
   </wsdl:message>
@@ -138,6 +265,72 @@
   </wsdl:message>
   <wsdl:message name="getReservetionsByClientSoapOut">
     <wsdl:part name="parameters" element="tns:getReservetionsByClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="getReservetionsByReceptionistSoapIn">
+    <wsdl:part name="parameters" element="tns:getReservetionsByReceptionist" />
+  </wsdl:message>
+  <wsdl:message name="getReservetionsByReceptionistSoapOut">
+    <wsdl:part name="parameters" element="tns:getReservetionsByReceptionistResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllReservetionsSoapIn">
+    <wsdl:part name="parameters" element="tns:getAllReservetions" />
+  </wsdl:message>
+  <wsdl:message name="getAllReservetionsSoapOut">
+    <wsdl:part name="parameters" element="tns:getAllReservetionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="addReservationSoapIn">
+    <wsdl:part name="parameters" element="tns:addReservation" />
+  </wsdl:message>
+  <wsdl:message name="addReservationSoapOut">
+    <wsdl:part name="parameters" element="tns:addReservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="addClientSoapIn">
+    <wsdl:part name="parameters" element="tns:addClient" />
+  </wsdl:message>
+  <wsdl:message name="addClientSoapOut">
+    <wsdl:part name="parameters" element="tns:addClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="addRecepcionistsSoapIn">
+    <wsdl:part name="parameters" element="tns:addRecepcionists" />
+  </wsdl:message>
+  <wsdl:message name="addRecepcionistsSoapOut">
+    <wsdl:part name="parameters" element="tns:addRecepcionistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="editRecepcionistsSoapIn">
+    <wsdl:part name="parameters" element="tns:editRecepcionists" />
+  </wsdl:message>
+  <wsdl:message name="editRecepcionistsSoapOut">
+    <wsdl:part name="parameters" element="tns:editRecepcionistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="editClientSoapIn">
+    <wsdl:part name="parameters" element="tns:editClient" />
+  </wsdl:message>
+  <wsdl:message name="editClientSoapOut">
+    <wsdl:part name="parameters" element="tns:editClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="editReservationSoapIn">
+    <wsdl:part name="parameters" element="tns:editReservation" />
+  </wsdl:message>
+  <wsdl:message name="editReservationSoapOut">
+    <wsdl:part name="parameters" element="tns:editReservationResponse" />
+  </wsdl:message>
+  <wsdl:message name="removeRecepcionistsSoapIn">
+    <wsdl:part name="parameters" element="tns:removeRecepcionists" />
+  </wsdl:message>
+  <wsdl:message name="removeRecepcionistsSoapOut">
+    <wsdl:part name="parameters" element="tns:removeRecepcionistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="removeClientSoapIn">
+    <wsdl:part name="parameters" element="tns:removeClient" />
+  </wsdl:message>
+  <wsdl:message name="removeClientSoapOut">
+    <wsdl:part name="parameters" element="tns:removeClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="removeReservationSoapIn">
+    <wsdl:part name="parameters" element="tns:removeReservation" />
+  </wsdl:message>
+  <wsdl:message name="removeReservationSoapOut">
+    <wsdl:part name="parameters" element="tns:removeReservationResponse" />
   </wsdl:message>
   <wsdl:portType name="HotelSanJavierSoap">
     <wsdl:operation name="HelloWorld">
@@ -156,6 +349,10 @@
       <wsdl:input message="tns:getClientSoapIn" />
       <wsdl:output message="tns:getClientSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="getReceptionist">
+      <wsdl:input message="tns:getReceptionistSoapIn" />
+      <wsdl:output message="tns:getReceptionistSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="loginReceptionist">
       <wsdl:input message="tns:loginReceptionistSoapIn" />
       <wsdl:output message="tns:loginReceptionistSoapOut" />
@@ -163,6 +360,50 @@
     <wsdl:operation name="getReservetionsByClient">
       <wsdl:input message="tns:getReservetionsByClientSoapIn" />
       <wsdl:output message="tns:getReservetionsByClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getReservetionsByReceptionist">
+      <wsdl:input message="tns:getReservetionsByReceptionistSoapIn" />
+      <wsdl:output message="tns:getReservetionsByReceptionistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllReservetions">
+      <wsdl:input message="tns:getAllReservetionsSoapIn" />
+      <wsdl:output message="tns:getAllReservetionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addReservation">
+      <wsdl:input message="tns:addReservationSoapIn" />
+      <wsdl:output message="tns:addReservationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addClient">
+      <wsdl:input message="tns:addClientSoapIn" />
+      <wsdl:output message="tns:addClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addRecepcionists">
+      <wsdl:input message="tns:addRecepcionistsSoapIn" />
+      <wsdl:output message="tns:addRecepcionistsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="editRecepcionists">
+      <wsdl:input message="tns:editRecepcionistsSoapIn" />
+      <wsdl:output message="tns:editRecepcionistsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="editClient">
+      <wsdl:input message="tns:editClientSoapIn" />
+      <wsdl:output message="tns:editClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="editReservation">
+      <wsdl:input message="tns:editReservationSoapIn" />
+      <wsdl:output message="tns:editReservationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="removeRecepcionists">
+      <wsdl:input message="tns:removeRecepcionistsSoapIn" />
+      <wsdl:output message="tns:removeRecepcionistsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="removeClient">
+      <wsdl:input message="tns:removeClientSoapIn" />
+      <wsdl:output message="tns:removeClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="removeReservation">
+      <wsdl:input message="tns:removeReservationSoapIn" />
+      <wsdl:output message="tns:removeReservationSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="HotelSanJavierSoap" type="tns:HotelSanJavierSoap">
@@ -203,6 +444,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getReceptionist">
+      <soap:operation soapAction="http://tempuri.org/getReceptionist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="loginReceptionist">
       <soap:operation soapAction="http://tempuri.org/loginReceptionist" style="document" />
       <wsdl:input>
@@ -214,6 +464,105 @@
     </wsdl:operation>
     <wsdl:operation name="getReservetionsByClient">
       <soap:operation soapAction="http://tempuri.org/getReservetionsByClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getReservetionsByReceptionist">
+      <soap:operation soapAction="http://tempuri.org/getReservetionsByReceptionist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllReservetions">
+      <soap:operation soapAction="http://tempuri.org/getAllReservetions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addReservation">
+      <soap:operation soapAction="http://tempuri.org/addReservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addClient">
+      <soap:operation soapAction="http://tempuri.org/addClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRecepcionists">
+      <soap:operation soapAction="http://tempuri.org/addRecepcionists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editRecepcionists">
+      <soap:operation soapAction="http://tempuri.org/editRecepcionists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editClient">
+      <soap:operation soapAction="http://tempuri.org/editClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editReservation">
+      <soap:operation soapAction="http://tempuri.org/editReservation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeRecepcionists">
+      <soap:operation soapAction="http://tempuri.org/removeRecepcionists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeClient">
+      <soap:operation soapAction="http://tempuri.org/removeClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeReservation">
+      <soap:operation soapAction="http://tempuri.org/removeReservation" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -260,6 +609,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getReceptionist">
+      <soap12:operation soapAction="http://tempuri.org/getReceptionist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="loginReceptionist">
       <soap12:operation soapAction="http://tempuri.org/loginReceptionist" style="document" />
       <wsdl:input>
@@ -271,6 +629,105 @@
     </wsdl:operation>
     <wsdl:operation name="getReservetionsByClient">
       <soap12:operation soapAction="http://tempuri.org/getReservetionsByClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getReservetionsByReceptionist">
+      <soap12:operation soapAction="http://tempuri.org/getReservetionsByReceptionist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllReservetions">
+      <soap12:operation soapAction="http://tempuri.org/getAllReservetions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addReservation">
+      <soap12:operation soapAction="http://tempuri.org/addReservation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addClient">
+      <soap12:operation soapAction="http://tempuri.org/addClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRecepcionists">
+      <soap12:operation soapAction="http://tempuri.org/addRecepcionists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editRecepcionists">
+      <soap12:operation soapAction="http://tempuri.org/editRecepcionists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editClient">
+      <soap12:operation soapAction="http://tempuri.org/editClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editReservation">
+      <soap12:operation soapAction="http://tempuri.org/editReservation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeRecepcionists">
+      <soap12:operation soapAction="http://tempuri.org/removeRecepcionists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeClient">
+      <soap12:operation soapAction="http://tempuri.org/removeClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeReservation">
+      <soap12:operation soapAction="http://tempuri.org/removeReservation" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

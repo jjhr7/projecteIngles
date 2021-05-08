@@ -6,41 +6,19 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
             <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
         </div>
-        <div class="row">
-            <div class="col-10">
-                <table class="table" id="listReservations">
-                  <thead class="thead-light">
-                    <tr>
-                      <th scope="col">ID RESERVATION</th>
-                      <th scope="col">DNI CLIETN</th>
-                      <th scope="col">ID RECEPCIONISTS</th>
-                      <th scope="col">ENTRY DATE</th>
-                      <th scope="col">EXIT DATE</th>
-                      <th scope="col">ID ROOM</th>
-                    </tr>
-                  </thead>
-                  <tbody id="reservationsData">
-                    
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Jacob</td>
-                      <td>Thornton</td>
-                      <td>@fat</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Larry</td>
-                      <td>the Bird</td>
-                      <td>@twitter</td>
-                    </tr>
-                  </tbody>
-                </table>
+        <div class="cointainer">
+            <div class="row">
+                <div class="offset-1 col-10">
+                    <asp:Panel ID="Panel1" runat="server"></asp:Panel>
+                </div>
             </div>
         </div>
     </form>
