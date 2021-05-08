@@ -31,5 +31,7 @@ namespace HotelSanJavaierWeb
                 TextBox1.Text = dr["name"].ToString();
             }
         }
+
+       
     }
 }

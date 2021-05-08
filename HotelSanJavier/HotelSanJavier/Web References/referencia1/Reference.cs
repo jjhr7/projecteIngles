@@ -13,7 +13,7 @@
 // 
 #pragma warning disable 1591
 
-namespace HotelSanJavaierWeb.referencia1 {
+namespace HotelSanJavier.referencia1 {
     using System;
     using System.Web.Services;
     using System.Diagnostics;
@@ -42,7 +42,7 @@ namespace HotelSanJavaierWeb.referencia1 {
         
         /// <remarks/>
         public HotelSanJavier() {
-            this.Url = global::HotelSanJavaierWeb.Properties.Settings.Default.HotelSanJavaierWeb_referencia1_HotelSanJavier;
+            this.Url = global::HotelSanJavier.Properties.Settings.Default.HotelSanJavier_referencia1_HotelSanJavier;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;

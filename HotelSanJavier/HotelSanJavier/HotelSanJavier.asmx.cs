@@ -35,7 +35,6 @@ namespace HotelSanJavier
             string DBpath = Server.MapPath("HotelSanJavier.db");
 
             DataTable dt = new DataTable();
-            string[] listaClientes = { };
           
 
             using (SQLiteConnection conn = new SQLiteConnection("Data Source=" + DBpath + ";Version=3;"))
@@ -49,6 +48,61 @@ namespace HotelSanJavier
 
 
             return dt;
+        }
+
+        [WebMethod]
+        public bool loginClient(string dni, string password)
+        {
+            string DBpath = Server.MapPath("HotelSanJavier.db");
+
+            DataTable dt = new DataTable();
+
+            using (SQLiteConnection conn = new SQLiteConnection("Data Source=" + DBpath + ";Version=3;"))
+            {
+                conn.Open();
+                SQLiteCommand comm = new SQLiteCommand("SELECT * FROM clients WHERE `dni` = '"+dni+ "' AND `password` = '"+password+"' ;", conn);
+                SQLiteDataReader reader = comm.ExecuteReader();
+                dt.Load(reader);
+                conn.Close();
+            }
+            if (dt.Rows.Count>0)
+            {
+                return true;
+
+            }
+            else {
+                return false;
+            }
+
+
+        }
+
+        [WebMethod]
+        public bool loginReceptionist(string dni, string password)
+        {
+            string DBpath = Server.MapPath("HotelSanJavier.db");
+
+            DataTable dt = new DataTable();
+
+            using (SQLiteConnection conn = new SQLiteConnection("Data Source=" + DBpath + ";Version=3;"))
+            {
+                conn.Open();
+                SQLiteCommand comm = new SQLiteCommand("SELECT * FROM recepcionists WHERE `dni` = '" + dni + "' AND `password` = '" + password + "' ;", conn);
+                SQLiteDataReader reader = comm.ExecuteReader();
+                dt.Load(reader);
+                conn.Close();
+            }
+            if (dt.Rows.Count > 0)
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
+
+
         }
     }
 }
