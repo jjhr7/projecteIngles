@@ -51,6 +51,27 @@ namespace HotelSanJavier
         }
 
         [WebMethod]
+        public DataTable getClientsByReceptionist(int idReceptionist)
+        {
+            string DBpath = Server.MapPath("HotelSanJavier.db");
+
+            DataTable dt = new DataTable();
+
+
+            using (SQLiteConnection conn = new SQLiteConnection("Data Source=" + DBpath + ";Version=3;"))
+            {
+                conn.Open();
+                SQLiteCommand comm = new SQLiteCommand("SELECT * FROM clients WHERE id_receptionist =" + idReceptionist + " ;", conn); ;
+                SQLiteDataReader reader = comm.ExecuteReader();
+                dt.Load(reader);
+                conn.Close();
+            }
+
+
+            return dt;
+        }
+
+        [WebMethod]
         public bool loginClient(string dni, string password)
         {
             string DBpath = Server.MapPath("HotelSanJavier.db");
@@ -231,7 +252,7 @@ namespace HotelSanJavier
         }
 
         [WebMethod]
-        public void addClient(string dni, string password, int telephone, string name, string surname, string email)
+        public void addClient(string dni, string password, int telephone, string name, string surname, string email, int id_receptionist)
         {
             string DBpath = Server.MapPath("HotelSanJavier.db");
             DataTable dt = new DataTable();
@@ -239,7 +260,7 @@ namespace HotelSanJavier
             using (SQLiteConnection conn = new SQLiteConnection("Data Source=" + DBpath + ";Version=3;"))
             {
                 conn.Open();
-                SQLiteCommand comm = new SQLiteCommand("INSERT INTO clients(dni, password, telephone, name, surname, email) VALUES('" + dni + "', '" + password + "', '" + telephone + "', '" + name + "', '" + surname + "', '"+email+"' );", conn);
+                SQLiteCommand comm = new SQLiteCommand("INSERT INTO clients(dni, password, telephone, name, surname, email, id_receptionist) VALUES('" + dni + "', '" + password + "', '" + telephone + "', '" + name + "', '" + surname + "', '"+email+"', "+id_receptionist+" );", conn);
                 SQLiteDataAdapter da = new SQLiteDataAdapter();
                 da.InsertCommand = comm;
                 da.InsertCommand.ExecuteNonQuery();
