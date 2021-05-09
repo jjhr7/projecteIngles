@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="HotelSanJavaierWeb.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>MASTER PAGE PROJECT</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link href="styles/MasterPage.css" rel="stylesheet" />
+    <link href="styles/Login.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+        <div class="header">
+            <div class="header-left align-middle">
+                <img src="https://turismo.sanjavier.es/wp-content/uploads/2019/07/ESTRELLA-TURISMO-logo-negro-1.png" alt="Alternate Text" />
+            </div>
+
+            <div class="header-right align-middle">
+                <a  href="HomePage.aspx">Home</a>
+                <a href="#contact">Contact</a>
+                <a href="LogInPage.aspx">Log in</a>
+            </div>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <!-- Footer -->
+    <footer class="page-footer font-small blue pt-4 text-white">
+
+        <!-- Footer Links -->
+        <div class="container-fluid text-center text-md-left">
+
+            <!-- Grid row -->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-md-6 mt-md-0 mt-3">
+
+                    <!-- Content -->
+                    <h5 class="text-uppercase">Contact information</h5>
+                    <p>Call us to make a reservation</p>
+                    <p>+34615271860</p>
+
+                </div>
+
+                <div class="col-md-6 mt-md-0 mt-3">
+
+                    <!-- Links -->
+                    <h5 class="text-uppercase">More</h5>
+
+                    <div class="footer-copyright text-center py-3">
+                        © 2020 HotelSanJavier:
+            <p>HotelSanJavier.com</p>
+
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Copyright -->
+                <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+</body>
+</html>

@@ -11,7 +11,7 @@ namespace HotelSanJavaierWeb
 {
 
 
-    public partial class WebForm1
+    public partial class LogInPage
     {
 
         /// <summary>

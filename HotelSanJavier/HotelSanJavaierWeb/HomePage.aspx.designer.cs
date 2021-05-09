@@ -11,7 +11,7 @@ namespace HotelSanJavaierWeb
 {
 
 
-    public partial class Home
+    public partial class HomePage
     {
 
         /// <summary>
