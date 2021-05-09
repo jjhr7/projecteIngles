@@ -76,7 +76,6 @@
     <Content Include="LogInPage.aspx" />
     <Content Include="ReceptionistsPage.aspx" />
     <Content Include="styles\Login.css" />
-    <Content Include="ReceptionistPage.aspx" />
     <Content Include="MasterPage.Master" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -120,13 +119,6 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="ReceptionistPage.aspx.cs">
-      <DependentUpon>ReceptionistPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ReceptionistPage.aspx.designer.cs">
-      <DependentUpon>ReceptionistPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="ReceptionistsPage.aspx.cs">
       <DependentUpon>ReceptionistsPage.aspx</DependentUpon>
