@@ -40,7 +40,7 @@ namespace HotelSanJavaierWeb
                 }
 
 
-                Response.Redirect("./ClientPage.aspx?dniClient=" + dniClient);
+                Response.Redirect("./ClientsPage.aspx?dniClient=" + dniClient);
             }
             else
             {
