@@ -26,9 +26,10 @@
     </div>
 
     <div class="container wrapper fadeInDown">
-      <div id="formContent">
+      <div id="formContent" style="margin-top: 5%;">
             <!-- Tabs Titles -->
-            <h2 class="active" style="margin-bottom: 10px;"> Sign In </h2>
+            <h2 class="text-dark" style="
+                margin-bottom: 10px;"> Sign In </h2>
           </div>
             
         
@@ -38,7 +39,7 @@
                         <div class=" text-center mt-2">
                             <h3>Log in as a client</h3>
                             <asp:TextBox type="text" ID="dniClient" class="fadeIn second" placeholder="DNI" runat="server"></asp:TextBox>
-                            <asp:TextBox type="text" ID="passwordClient" runat="server" class="fadeIn third" name="login" placeholder="password"></asp:TextBox>
+                            <asp:TextBox type="text" ID="passwordClient" runat="server" class="fadeIn third" name="login" placeholder="PASSWORD"></asp:TextBox>
                             <asp:Button type="submit" class="fadeIn fourth align-middle" value="Log In" ID="Button1" runat="server" Text="Log in" OnClick="Button1_Click" />
                         </div>
     
@@ -48,7 +49,7 @@
                         <div class=" text-center mt-2">
                             <h3>Log in as a receptionist</h3>
                             <asp:TextBox type="text" ID="dniRecepcionist" class="fadeIn second" placeholder="DNI" runat="server"></asp:TextBox>
-                            <asp:TextBox type="text" ID="passwordRecepcionist" runat="server" class="fadeIn third" name="login" placeholder="password"></asp:TextBox>
+                            <asp:TextBox type="text" ID="passwordRecepcionist" runat="server" class="fadeIn third" name="login" placeholder="PASSWORD"></asp:TextBox>
                             <asp:Button type="submit" class="fadeIn fourth align-middle" value="Log In" ID="Button2" runat="server" text="Log in" OnClick="Button2_Click" />
                         </div>
     
@@ -58,7 +59,7 @@
        </div>
     
     <!-- Footer -->
-    <footer class="page-footer font-small blue pt-4 text-white">
+    <footer class="page-footer font-small blue pt-4 text-white align-bottom">
 
         <!-- Footer Links -->
         <div class="container-fluid text-center text-md-left">

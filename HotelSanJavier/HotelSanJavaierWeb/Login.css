@@ -9,6 +9,9 @@ html {
 body {
     font-family: "Poppins", sans-serif;
     height: 100vh;
+    background-image: url(https://www.playasenator.com/wp-content/blogs.dir/1031/files/hotel-playacalida/PLAYACALIDA_CABECERA_NEW.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 a {
@@ -38,8 +41,10 @@ h2 {
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    margin-top: 5%;
-    margin-bottom: 10%;
+    margin-top:5%;
+    margin-bottom: 5%;
+    background-color: rgba(0,0,0,0.2);
+    color: white;
 }
 
 #formContent {
