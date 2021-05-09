@@ -86,12 +86,8 @@ namespace HotelSanJavaierWeb
                 int rol = Int32.Parse(rolReceptionist.Text);
                 string password = passwordReceptionist.Text;
                 ws.addRecepcionists(name,lastname,dni,rol,password);
-                Console.WriteLine("-----------------CREADO USUARIO----------------");
+               
 
-            }
-            else
-            {
-                Console.WriteLine("-----------------NO SE HA CREADO USUARIO----------------");
             }
         }
 
@@ -106,7 +102,23 @@ namespace HotelSanJavaierWeb
             int idRoom = Convert.ToInt32(TextBox5.Text);
             
             ws.addReservation(dniClient, Convert.ToInt32(idReceptionist), entryDate, exitDate, idRoom);
-            Console.WriteLine("-----------------CREADA reserva----------------");
+            
+
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            HotelSanJavier ws = new HotelSanJavier();
+
+            string dniClient = dniClientC.Text;
+            string password = passwowrdClicentC.Text;
+            string telephone = telephoneClientC.Text;
+            string nameClient = clientNameC.Text;
+            string surname = surnameClientC.Text;
+            string email = emailClientC.Text;
+
+            ws.addClient(dniClient, password, Int32.Parse(telephone), nameClient, surname, email);
+
 
         }
     }

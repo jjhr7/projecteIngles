@@ -231,18 +231,18 @@ namespace HotelSanJavier
         }
 
         [WebMethod]
-        public void addClient()
+        public void addClient(string dni, string password, int telephone, string name, string surname, string email)
         {
             string DBpath = Server.MapPath("HotelSanJavier.db");
-
             DataTable dt = new DataTable();
 
             using (SQLiteConnection conn = new SQLiteConnection("Data Source=" + DBpath + ";Version=3;"))
             {
                 conn.Open();
-                SQLiteCommand comm = new SQLiteCommand("SELECT * FROM reservations ;", conn);
-                SQLiteDataReader reader = comm.ExecuteReader();
-                dt.Load(reader);
+                SQLiteCommand comm = new SQLiteCommand("INSERT INTO clients(dni, password, telephone, name, surname, email) VALUES('" + dni + "', '" + password + "', '" + telephone + "', '" + name + "', '" + surname + "', '"+email+"' );", conn);
+                SQLiteDataAdapter da = new SQLiteDataAdapter();
+                da.InsertCommand = comm;
+                da.InsertCommand.ExecuteNonQuery();
                 conn.Close();
             }
         }

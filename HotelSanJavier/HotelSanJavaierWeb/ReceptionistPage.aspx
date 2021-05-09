@@ -17,6 +17,28 @@
 
             <form id="form1" runat="server">
                 <div class="row">
+                    <div class="offset-1 col-10">
+                        <h2>Create client form</h2>
+                        <asp:Label ID="Label9" runat="server" Text="Label">DNI Client: </asp:Label>
+                        <asp:TextBox ID="dniClientC" runat="server"></asp:TextBox>
+                        <br />                     
+                        <asp:Label ID="Label12" runat="server" Text="Label">Password: </asp:Label>
+                        <asp:TextBox ID="passwowrdClicentC" runat="server"></asp:TextBox>
+                        <br />
+                        <asp:Label ID="Label13" runat="server" Text="Label">Telephone: </asp:Label>
+                        <asp:TextBox ID="telephoneClientC" runat="server"></asp:TextBox>
+                        <br />
+                        <asp:Label ID="Label14" runat="server" Text="Label">Name: </asp:Label>
+                        <asp:TextBox ID="clientNameC" runat="server"></asp:TextBox>
+                        <br />
+                        <asp:Label ID="Label15" runat="server" Text="Label">Surname: </asp:Label>
+                        <asp:TextBox ID="surnameClientC" runat="server"></asp:TextBox>
+                        <br />
+                        <asp:Label ID="Label16" runat="server" Text="Label">Email: </asp:Label>
+                        <asp:TextBox ID="emailClientC" runat="server"></asp:TextBox>
+                        <br />
+                        <asp:Button ID="Button3" runat="server" Text="Button" OnClick="Button3_Click" />
+                    </div>
                     <div class="col-6">
                         <h2>Create receptionis form</h2>
                         <asp:Label ID="Label3" runat="server" Text="Label">Name recepcionist: </asp:Label>

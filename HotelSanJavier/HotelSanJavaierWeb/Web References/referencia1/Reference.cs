@@ -453,21 +453,33 @@ namespace HotelSanJavaierWeb.referencia1 {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/addClient", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void addClient() {
-            this.Invoke("addClient", new object[0]);
+        public void addClient(string dni, string password, int telephone, string name, string surname, string email) {
+            this.Invoke("addClient", new object[] {
+                        dni,
+                        password,
+                        telephone,
+                        name,
+                        surname,
+                        email});
         }
         
         /// <remarks/>
-        public void addClientAsync() {
-            this.addClientAsync(null);
+        public void addClientAsync(string dni, string password, int telephone, string name, string surname, string email) {
+            this.addClientAsync(dni, password, telephone, name, surname, email, null);
         }
         
         /// <remarks/>
-        public void addClientAsync(object userState) {
+        public void addClientAsync(string dni, string password, int telephone, string name, string surname, string email, object userState) {
             if ((this.addClientOperationCompleted == null)) {
                 this.addClientOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddClientOperationCompleted);
             }
-            this.InvokeAsync("addClient", new object[0], this.addClientOperationCompleted, userState);
+            this.InvokeAsync("addClient", new object[] {
+                        dni,
+                        password,
+                        telephone,
+                        name,
+                        surname,
+                        email}, this.addClientOperationCompleted, userState);
         }
         
         private void OnaddClientOperationCompleted(object arg) {
