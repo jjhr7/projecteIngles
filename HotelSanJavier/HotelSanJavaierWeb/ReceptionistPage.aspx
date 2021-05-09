@@ -13,7 +13,14 @@
         <div class="row">
              <asp:Label ID="Label1" runat="server" Text="Label"> </asp:Label>
             <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
-            <asp:Panel ID="Panel1" runat="server"></asp:Panel>
+            <div class="offset-1 col-10">
+                <h2>List of reservations</h2>
+                <asp:Panel ID="Panel1" runat="server"></asp:Panel>
+            </div>
+            <div class="offset-1 col-10">
+                <h2>List of clients</h2>
+                <asp:Panel ID="Panel2" runat="server"></asp:Panel>
+            </div>
 
             <form id="form1" runat="server">
                 <div class="row">
@@ -40,7 +47,7 @@
                         <asp:Button ID="Button3" runat="server" Text="Button" OnClick="Button3_Click" />
                     </div>
                     <div class="col-6">
-                        <h2>Create receptionis form</h2>
+                        <h2>Create receptionist form</h2>
                         <asp:Label ID="Label3" runat="server" Text="Label">Name recepcionist: </asp:Label>
                         <asp:TextBox ID="nameReceptionist" runat="server"></asp:TextBox>
                         <br />
