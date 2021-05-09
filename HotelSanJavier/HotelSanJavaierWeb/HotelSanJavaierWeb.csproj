@@ -74,6 +74,7 @@
     <Content Include="ClientsPage.aspx" />
     <Content Include="HomePage.aspx" />
     <Content Include="LogInPage.aspx" />
+    <Content Include="ReceptionistsPage.aspx" />
     <Content Include="styles\Login.css" />
     <Content Include="ReceptionistPage.aspx" />
     <Content Include="MasterPage.Master" />
@@ -126,6 +127,13 @@
     </Compile>
     <Compile Include="ReceptionistPage.aspx.designer.cs">
       <DependentUpon>ReceptionistPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReceptionistsPage.aspx.cs">
+      <DependentUpon>ReceptionistsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReceptionistsPage.aspx.designer.cs">
+      <DependentUpon>ReceptionistsPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web References\referencia1\Reference.cs">
       <AutoGen>True</AutoGen>

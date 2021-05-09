@@ -75,7 +75,7 @@ namespace HotelSanJavaierWeb
 
                 }
 
-                Response.Redirect("./ReceptionistPage.aspx?idReceptionist=" + idReceptionist);
+                Response.Redirect("./ReceptionistsPage.aspx?idReceptionist=" + idReceptionist);
 
             }
             else
