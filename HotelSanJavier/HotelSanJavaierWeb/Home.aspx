@@ -11,7 +11,6 @@
 </head>
 <body>
 
-
     <div class="header">
         <div class="header-left align-middle">
             <img src="https://turismo.sanjavier.es/wp-content/uploads/2019/07/ESTRELLA-TURISMO-logo-negro-1.png" alt="Alternate Text" />
@@ -20,7 +19,7 @@
         <div class="header-right align-middle">
             <a class="active" href="#home">Home</a>
             <a href="#contact">Contact</a>
-            <a href="#about">Log in</a>
+            <a href="LogIn.aspx">Log in</a>
         </div>
     </div>
 

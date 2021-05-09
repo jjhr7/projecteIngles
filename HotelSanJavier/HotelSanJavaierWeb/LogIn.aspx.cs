@@ -44,7 +44,7 @@ namespace HotelSanJavaierWeb
             }
             else
             {
-                TextBox3.Text = existe + "";
+                //TextBox3.Text = existe + "";
             }
 
 
@@ -60,7 +60,7 @@ namespace HotelSanJavaierWeb
 
             bool existe = ws.loginReceptionist(dniR, passwordR);
 
-            TextBox4.Text = existe + "";
+            //TextBox4.Text = existe + "";
 
             DataTable receptionistData;
 
@@ -83,7 +83,7 @@ namespace HotelSanJavaierWeb
             }
             else
             {
-                TextBox4.Text = existe + "";
+                //TextBox4.Text = existe + "";
             }
         }
     }
