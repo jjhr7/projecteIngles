@@ -82,11 +82,6 @@
     <Content Include="main.css" />
     <None Include="Web References\referencia1\HotelSanJavier.disco" />
     <Content Include="Web.config" />
-    <None Include="Web References\referencia1\HotelSanJavier.wsdl" />
-    <None Include="Web References\referencia1\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Home.aspx.cs">
@@ -131,6 +126,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Web References\referencia1\HotelSanJavier.wsdl" />
+    <None Include="Web References\referencia1\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

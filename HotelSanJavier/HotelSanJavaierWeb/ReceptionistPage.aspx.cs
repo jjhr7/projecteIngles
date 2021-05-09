@@ -16,7 +16,7 @@ namespace HotelSanJavaierWeb
         {
             HotelSanJavier ws = new HotelSanJavier();
             string idReceptionist = Request.QueryString["idReceptionist"];
-            Label1.Text += idReceptionist;
+            Label1.Text = "Id recepcionista: " + idReceptionist;
             DataTable listReservas;
 
             if (Int32.Parse(idReceptionist) == 1)
@@ -69,13 +69,14 @@ namespace HotelSanJavaierWeb
             HotelSanJavier ws = new HotelSanJavier();
             string idReceptionist = Request.QueryString["idReceptionist"];
             int rolReceptionistCast = 0;
-            DataTable receptionistData = ws.getReceptionist(idReceptionist);
+            DataTable receptionistData = ws.getReceptionistById(idReceptionist);
 
             foreach (DataRow dr in receptionistData.Rows)
             {
                 rolReceptionistCast = Int32.Parse(dr["rol"].ToString());
 
             }
+            Label2.Text += "El rol del usuario es"+rolReceptionistCast;
 
             if (rolReceptionistCast == 1)
             {
@@ -92,6 +93,21 @@ namespace HotelSanJavaierWeb
             {
                 Console.WriteLine("-----------------NO SE HA CREADO USUARIO----------------");
             }
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            HotelSanJavier ws = new HotelSanJavier();
+            string idReceptionist = Request.QueryString["idReceptionist"];
+
+            string dniClient = dni_client.Text;
+            string entryDate = entry_date.Text;
+            string exitDate = exit_date.Text;
+            int idRoom = Convert.ToInt32(TextBox5.Text);
+            
+            ws.addReservation(dniClient, Convert.ToInt32(idReceptionist), entryDate, exitDate, idRoom);
+            Console.WriteLine("-----------------CREADA reserva----------------");
+
         }
     }
 }

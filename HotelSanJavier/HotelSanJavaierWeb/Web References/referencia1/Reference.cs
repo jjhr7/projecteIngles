@@ -40,6 +40,8 @@ namespace HotelSanJavaierWeb.referencia1 {
         
         private System.Threading.SendOrPostCallback getReceptionistOperationCompleted;
         
+        private System.Threading.SendOrPostCallback getReceptionistByIdOperationCompleted;
+        
         private System.Threading.SendOrPostCallback loginReceptionistOperationCompleted;
         
         private System.Threading.SendOrPostCallback getReservetionsByClientOperationCompleted;
@@ -48,9 +50,9 @@ namespace HotelSanJavaierWeb.referencia1 {
         
         private System.Threading.SendOrPostCallback getAllReservetionsOperationCompleted;
         
-        private System.Threading.SendOrPostCallback addReservationOperationCompleted;
-        
         private System.Threading.SendOrPostCallback addClientOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback addReservationOperationCompleted;
         
         private System.Threading.SendOrPostCallback addRecepcionistsOperationCompleted;
         
@@ -120,6 +122,9 @@ namespace HotelSanJavaierWeb.referencia1 {
         public event getReceptionistCompletedEventHandler getReceptionistCompleted;
         
         /// <remarks/>
+        public event getReceptionistByIdCompletedEventHandler getReceptionistByIdCompleted;
+        
+        /// <remarks/>
         public event loginReceptionistCompletedEventHandler loginReceptionistCompleted;
         
         /// <remarks/>
@@ -132,10 +137,10 @@ namespace HotelSanJavaierWeb.referencia1 {
         public event getAllReservetionsCompletedEventHandler getAllReservetionsCompleted;
         
         /// <remarks/>
-        public event addReservationCompletedEventHandler addReservationCompleted;
+        public event addClientCompletedEventHandler addClientCompleted;
         
         /// <remarks/>
-        public event addClientCompletedEventHandler addClientCompleted;
+        public event addReservationCompletedEventHandler addReservationCompleted;
         
         /// <remarks/>
         public event addRecepcionistsCompletedEventHandler addRecepcionistsCompleted;
@@ -302,6 +307,35 @@ namespace HotelSanJavaierWeb.referencia1 {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/getReceptionistById", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable getReceptionistById(string id) {
+            object[] results = this.Invoke("getReceptionistById", new object[] {
+                        id});
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getReceptionistByIdAsync(string id) {
+            this.getReceptionistByIdAsync(id, null);
+        }
+        
+        /// <remarks/>
+        public void getReceptionistByIdAsync(string id, object userState) {
+            if ((this.getReceptionistByIdOperationCompleted == null)) {
+                this.getReceptionistByIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetReceptionistByIdOperationCompleted);
+            }
+            this.InvokeAsync("getReceptionistById", new object[] {
+                        id}, this.getReceptionistByIdOperationCompleted, userState);
+        }
+        
+        private void OngetReceptionistByIdOperationCompleted(object arg) {
+            if ((this.getReceptionistByIdCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getReceptionistByIdCompleted(this, new getReceptionistByIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/loginReceptionist", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public bool loginReceptionist(string dni, string password) {
             object[] results = this.Invoke("loginReceptionist", new object[] {
@@ -418,32 +452,6 @@ namespace HotelSanJavaierWeb.referencia1 {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/addReservation", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void addReservation() {
-            this.Invoke("addReservation", new object[0]);
-        }
-        
-        /// <remarks/>
-        public void addReservationAsync() {
-            this.addReservationAsync(null);
-        }
-        
-        /// <remarks/>
-        public void addReservationAsync(object userState) {
-            if ((this.addReservationOperationCompleted == null)) {
-                this.addReservationOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddReservationOperationCompleted);
-            }
-            this.InvokeAsync("addReservation", new object[0], this.addReservationOperationCompleted, userState);
-        }
-        
-        private void OnaddReservationOperationCompleted(object arg) {
-            if ((this.addReservationCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.addReservationCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/addClient", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public void addClient() {
             this.Invoke("addClient", new object[0]);
@@ -466,6 +474,42 @@ namespace HotelSanJavaierWeb.referencia1 {
             if ((this.addClientCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.addClientCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/addReservation", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void addReservation(string dni_client, int id_receptionist, string entry_date, string exit_date, int id_room) {
+            this.Invoke("addReservation", new object[] {
+                        dni_client,
+                        id_receptionist,
+                        entry_date,
+                        exit_date,
+                        id_room});
+        }
+        
+        /// <remarks/>
+        public void addReservationAsync(string dni_client, int id_receptionist, string entry_date, string exit_date, int id_room) {
+            this.addReservationAsync(dni_client, id_receptionist, entry_date, exit_date, id_room, null);
+        }
+        
+        /// <remarks/>
+        public void addReservationAsync(string dni_client, int id_receptionist, string entry_date, string exit_date, int id_room, object userState) {
+            if ((this.addReservationOperationCompleted == null)) {
+                this.addReservationOperationCompleted = new System.Threading.SendOrPostCallback(this.OnaddReservationOperationCompleted);
+            }
+            this.InvokeAsync("addReservation", new object[] {
+                        dni_client,
+                        id_receptionist,
+                        entry_date,
+                        exit_date,
+                        id_room}, this.addReservationOperationCompleted, userState);
+        }
+        
+        private void OnaddReservationOperationCompleted(object arg) {
+            if ((this.addReservationCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.addReservationCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -812,6 +856,32 @@ namespace HotelSanJavaierWeb.referencia1 {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void getReceptionistByIdCompletedEventHandler(object sender, getReceptionistByIdCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getReceptionistByIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getReceptionistByIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void loginReceptionistCompletedEventHandler(object sender, loginReceptionistCompletedEventArgs e);
     
     /// <remarks/>
@@ -916,11 +986,11 @@ namespace HotelSanJavaierWeb.referencia1 {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void addReservationCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    public delegate void addClientCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void addClientCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    public delegate void addReservationCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
