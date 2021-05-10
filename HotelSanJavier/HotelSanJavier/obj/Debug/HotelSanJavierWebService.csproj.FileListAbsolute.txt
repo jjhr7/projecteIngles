@@ -52,7 +52,6 @@ C:\ProyectosGTI\Segundo\SegundoCuatri\ProyctoIngles\projecteIngles\HotelSanJavie
 C:\ProyectosGTI\Segundo\SegundoCuatri\ProyctoIngles\projecteIngles\HotelSanJavier\HotelSanJavier\bin\roslyn\VBCSCompiler.exe.config
 C:\ProyectosGTI\Segundo\SegundoCuatri\ProyctoIngles\projecteIngles\HotelSanJavier\HotelSanJavier\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\ProyectosGTI\Segundo\SegundoCuatri\ProyctoIngles\projecteIngles\HotelSanJavier\HotelSanJavier\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\ProyectosGTI\Segundo\SegundoCuatri\ProyctoIngles\projecteIngles\HotelSanJavier\HotelSanJavier\obj\Debug\HotelSanJavierWebService.csprojAssemblyReference.cache
 C:\ProyectosGTI\Segundo\SegundoCuatri\ProyctoIngles\projecteIngles\HotelSanJavier\HotelSanJavier\obj\Debug\HotelSanJavierWebService.csproj.CoreCompileInputs.cache
 C:\ProyectosGTI\Segundo\SegundoCuatri\ProyctoIngles\projecteIngles\HotelSanJavier\HotelSanJavier\obj\Debug\HotelSanJavierWebService.csproj.CopyComplete
 C:\ProyectosGTI\Segundo\SegundoCuatri\ProyctoIngles\projecteIngles\HotelSanJavier\HotelSanJavier\obj\Debug\HotelSanJavier.dll
