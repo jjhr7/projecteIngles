@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using HotelSanJavaierWeb.referencia1;
 using System.Data;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace HotelSanJavaierWeb
 {
@@ -44,7 +46,7 @@ namespace HotelSanJavaierWeb
             }
             else
             {
-                //TextBox3.Text = existe + "";
+                System.Windows.Forms.MessageBox.Show("Incorrect credentials", "Please, try again", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -57,7 +59,6 @@ namespace HotelSanJavaierWeb
 
             bool existe = ws.loginReceptionist(dniR, passwordR);
 
-            //TextBox4.Text = existe + "";
 
             DataTable receptionistData;
 
@@ -80,7 +81,7 @@ namespace HotelSanJavaierWeb
             }
             else
             {
-                //TextBox4.Text = existe + "";
+                System.Windows.Forms.MessageBox.Show("Incorrect credentials", "Please, try again", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
     }
