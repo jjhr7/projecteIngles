@@ -2,9 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server" class="bodyLogin">
-    <div class="container wrapper fadeInDown">
+    <body>
+        <div class="container wrapper fadeInDown">
       <div id="formContent">
-            <!-- Tabs Titles -->
             <h2 class="active classTxtLogIn text-white">Sign In</h2>
           </div>
             
@@ -33,4 +33,7 @@
                  </div>
             </form>
        </div>
+
+    </body>
+    
 </asp:Content>

@@ -2,7 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <!-- Background image -->
     <div
         class="divImg p-5 text-center bg-image"
         style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/041.jpg'); background-repeat: no-repeat; background-size: cover; width: 100%; height: auto;">
@@ -65,5 +64,4 @@
                 style="text-align: center; padding-top: 18%;     text-align-last: center;">RESTAURANTS</p>
         </div>
     </div>
-    <!-- Background image -->
 </asp:Content>
