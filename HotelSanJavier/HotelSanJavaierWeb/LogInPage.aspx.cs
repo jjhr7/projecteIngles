@@ -40,7 +40,7 @@ namespace HotelSanJavaierWeb
                 }
 
 
-                Response.Redirect("./ClientPage.aspx?dniClient=" + dniClient);
+                Response.Redirect("./ClientsPage.aspx?dniClient=" + dniClient);
             }
             else
             {
@@ -75,7 +75,7 @@ namespace HotelSanJavaierWeb
 
                 }
 
-                Response.Redirect("./ReceptionistPage.aspx?idReceptionist=" + idReceptionist);
+                Response.Redirect("./ReceptionistsPage.aspx?idReceptionist=" + idReceptionist);
 
             }
             else

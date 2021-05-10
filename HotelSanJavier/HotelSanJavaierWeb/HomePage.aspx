@@ -57,12 +57,13 @@
                 style="text-align: center; padding-top: 18%;">WEDDINGS</h2>
         </div>
         
-        <div class="col-6" style="background-color: #7dffef;">
+        <div class="col-6" style="background-color: dodgerblue;">
             <h2 class="align-middle"
                 style="text-align: center; padding-top: 18%;">RESTAURANTS</h2>
         </div>
-        <div class="col-6">
-            <img class=" img-fluid" src="https://turismo.sanjavier.es/wp-content/uploads/2019/07/restaurantes.jpg" alt="Alternate Text" />
+        <div class="col-6" style="background-color: dodgerblue;">
+            <h2 class="align-middle"
+                style="text-align: center; padding-top: 18%;">RESTAURANTS</h2>
         </div>
     </div>
     <!-- Background image -->

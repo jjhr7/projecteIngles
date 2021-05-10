@@ -71,11 +71,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ClientPage.aspx" />
+    <Content Include="ClientsPage.aspx" />
     <Content Include="HomePage.aspx" />
     <Content Include="LogInPage.aspx" />
+    <Content Include="ReceptionistsPage.aspx" />
     <Content Include="styles\Login.css" />
-    <Content Include="ReceptionistPage.aspx" />
     <Content Include="MasterPage.Master" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -86,6 +86,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientsPage.aspx.cs">
+      <DependentUpon>ClientsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientsPage.aspx.designer.cs">
+      <DependentUpon>ClientsPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -113,19 +120,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="ClientPage.aspx.cs">
-      <DependentUpon>ClientPage.aspx</DependentUpon>
+    <Compile Include="ReceptionistsPage.aspx.cs">
+      <DependentUpon>ReceptionistsPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ClientPage.aspx.designer.cs">
-      <DependentUpon>ClientPage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ReceptionistPage.aspx.cs">
-      <DependentUpon>ReceptionistPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ReceptionistPage.aspx.designer.cs">
-      <DependentUpon>ReceptionistPage.aspx</DependentUpon>
+    <Compile Include="ReceptionistsPage.aspx.designer.cs">
+      <DependentUpon>ReceptionistsPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web References\referencia1\Reference.cs">
       <AutoGen>True</AutoGen>
