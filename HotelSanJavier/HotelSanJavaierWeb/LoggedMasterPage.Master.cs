@@ -13,5 +13,13 @@ namespace HotelSanJavaierWeb
         {
 
         }
+
+        protected void ButtonLogOut_Click(object sender, EventArgs e)
+        {
+            Session["authentication"] = false;
+            Session["dniClient"] = null;
+            Session["idReceptionist"] = null;
+            Response.Redirect("../LogInPage.aspx");
+        }
     }
 }

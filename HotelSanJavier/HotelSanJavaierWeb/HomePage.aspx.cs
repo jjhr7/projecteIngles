@@ -11,7 +11,7 @@ namespace HotelSanJavaierWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session["authentication"] = false;
         }
 
         protected void Button1_Click(object sender, EventArgs e)

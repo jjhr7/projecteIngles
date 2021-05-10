@@ -8,14 +8,17 @@ using HotelSanJavaierWeb.referencia1;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Web.Security;
+using System.Security.Permissions;
 
 namespace HotelSanJavaierWeb
 {
     public partial class LogInPage : System.Web.UI.Page
     {
+       
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session["authentication"] = false;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -25,7 +28,7 @@ namespace HotelSanJavaierWeb
             string dniC = dniClient.Text;
             string passwordC = passwordClient.Text;
 
-            bool existe = ws.loginClient(dniC, passwordC);
+           bool existe = ws.loginClient(dniC, passwordC);
             DataTable clientData;
 
             if (existe)
@@ -41,8 +44,10 @@ namespace HotelSanJavaierWeb
 
                 }
 
-
-                Response.Redirect("./ClientsPage.aspx?dniClient=" + dniClient);
+                FormsAuthentication.SetAuthCookie("user", true);
+                Session["authentication"] = true;
+                Session["dniClient"] = dniClient;
+                Response.Redirect("./Client/ClientsPage.aspx");
             }
             else
             {
@@ -75,8 +80,10 @@ namespace HotelSanJavaierWeb
                     idReceptionist = dr["id"].ToString();
 
                 }
-
-                Response.Redirect("./ReceptionistsPage.aspx?idReceptionist=" + idReceptionist);
+                FormsAuthentication.SetAuthCookie("admin", true);
+                Session["authentication"] = true;
+                Session["idReceptionist"] = idReceptionist;
+                Response.Redirect("./Receptionist/ReceptionistsPage.aspx");
 
             }
             else

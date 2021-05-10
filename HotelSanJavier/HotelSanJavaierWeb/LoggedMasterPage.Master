@@ -19,7 +19,7 @@
             </div>
 
             <div class="header-right align-middle">
-                <a  href="HomePage.aspx">Log out</a>
+                <a  id="ButtonLogOut" onclick="ButtonLogOut_Click" href="../HomePage.aspx">Log out</a>
             </div>
         </div>
         <div>
