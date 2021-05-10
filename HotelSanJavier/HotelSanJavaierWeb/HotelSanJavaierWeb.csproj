@@ -72,11 +72,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ClientsPage.aspx" />
+    <Content Include="ContactPage.aspx" />
     <Content Include="HomePage.aspx" />
+    <Content Include="img\Beach-ball-At-The-Beach.svg" />
     <Content Include="LogInPage.aspx" />
     <Content Include="ReceptionistsPage.aspx" />
+    <Content Include="styles\Logged.css" />
+    <Content Include="styles\LoggedMasterPage.css" />
     <Content Include="styles\Login.css" />
     <Content Include="MasterPage.Master" />
+    <Content Include="LoggedMasterPage.Master" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -93,12 +98,26 @@
     <Compile Include="ClientsPage.aspx.designer.cs">
       <DependentUpon>ClientsPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ContactPage.aspx.cs">
+      <DependentUpon>ContactPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactPage.aspx.designer.cs">
+      <DependentUpon>ContactPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoggedMasterPage.Master.cs">
+      <DependentUpon>LoggedMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoggedMasterPage.Master.designer.cs">
+      <DependentUpon>LoggedMasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="LogInPage.aspx.cs">
       <DependentUpon>LogInPage.aspx</DependentUpon>

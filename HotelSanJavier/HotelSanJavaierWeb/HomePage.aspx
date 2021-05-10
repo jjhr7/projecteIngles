@@ -20,9 +20,8 @@
     </div>
 
     <div class="row align-middle">
-        <div class="col-6" style="background-color: #7dffef;">
-            <h2 class="align-middle"
-                style="text-align: center; padding-top: 18%;">ACTIVE TOURISM</h2>
+        <div class="col-6" style="background-color: #7dffef;     font-family: auto;">
+            <h1 style="text-align: center; padding-top: 18%; ">ACTIVE TOURISM</h1>
         </div>
 
         <div class="col-6" >
@@ -33,15 +32,15 @@
             <img src="https://turismo.sanjavier.es/wp-content/uploads/2019/09/alojamientos.jpg" alt="Alternate Text" />
         </div>
 
-        <div class="col-6" style="background-color: #7dffef;">
-            <h2 class="align-middle text-dark-50 justify-content-center text-center"
-                style="text-align: center; padding-top: 18%; justify-content: center">ACCOMMODATION</h2>
+        <div class="col-6" style="background-color: #7dffef;     text-align-last: center;     font-family: auto;">
+            <h1 class="align-middle text-dark-50 justify-content-center text-center font-weight-bold"
+                style="text-align: center; padding-top: 18%; justify-content: center">ACCOMMODATION</h1>
         </div>
         
 
-        <div class="col-6" style="background-color: #7dffef;">
-            <h2 class="align-middle"
-                style="text-align: center; padding-top: 18%;">SITES OF INTEREST</h2>
+        <div class="col-6" style="background-color: #7dffef;     font-family: auto;     text-align-last: center;">
+            <h1 class="align-middle font-weight-bold"
+                style="text-align: center; padding-top: 18%;">SITES OF INTEREST</h1>
         </div>
 
         <div class="col-6">
@@ -52,18 +51,18 @@
             <img src="https://turismo.sanjavier.es/wp-content/uploads/2019/07/bodas.jpg" alt="Alternate Text" />
         </div>
 
-        <div class="col-6" style="background-color: #7dffef;">
-            <h2 class="align-middle"
-                style="text-align: center; padding-top: 18%;">WEDDINGS</h2>
+        <div class="col-6" style="background-color: #7dffef;     font-family: auto;">
+            <h1 class="align-middle font-weight-bold"
+                style="text-align: center; padding-top: 18%;">WEDDINGS</h1>
         </div>
         
-        <div class="col-6" style="background-color: dodgerblue;">
-            <h2 class="align-middle"
-                style="text-align: center; padding-top: 18%;">RESTAURANTS</h2>
+        <div class="col-6" style="background-color: dodgerblue;     font-family: auto;">
+            <p class="align-middle"
+                style="text-align: center; padding-top: 18%">RESTAURANTS</p>
         </div>
-        <div class="col-6" style="background-color: dodgerblue;">
-            <h2 class="align-middle"
-                style="text-align: center; padding-top: 18%;">RESTAURANTS</h2>
+        <div class="col-6" style="background-color: dodgerblue;     font-family: auto;">
+            <p class="align-middle"
+                style="text-align: center; padding-top: 18%;     text-align-last: center;">RESTAURANTS</p>
         </div>
     </div>
     <!-- Background image -->
