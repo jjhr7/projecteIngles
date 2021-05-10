@@ -207,5 +207,27 @@ namespace HotelSanJavaierWeb
             Panel4.Controls.Clear();
             Page_Load(this, null);
         }
+
+        protected void Edit_Button(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void EditReservatio_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void EditClient_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void EditReceptionist_Click(object sender, EventArgs e)
+        {
+            
+
+
+        }
     }
 }

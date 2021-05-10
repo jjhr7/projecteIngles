@@ -11,6 +11,7 @@
                 <h2>List of reserves</h2>
                 <asp:Panel class="tableClients" ID="Panel1" runat="server"></asp:Panel>
             </div>
+            
             <div class="offset-1 col-10">
                 <h2>List of clients</h2>
                 <asp:Panel class="tableClients" ID="Panel2" runat="server"></asp:Panel>
@@ -61,7 +62,28 @@
                         <asp:Button ID="Button2" runat="server" Text="Create reserve" OnClick="Button2_Click" />
                     </div>
                 </div>
-
+                <div class="row ">
+                    <h3 class="d-flex justify-content-center">Edit actions</h3>
+                    <div class="col-4 d-flex justify-content-center">
+                        <asp:Button ID="EditReservation" class="btn btn-info" runat="server" Text="Edit reservation" OnClick="EditReservatio_Click" />
+                        <asp:TextBox ID="idReservationEdit" runat="server" placeholder="Id reservation to edit" Visible="False"></asp:TextBox>
+                        <asp:Button ID="findDataToEdit"  Visible="False" runat="server" Text="Fetch reservation Data" />
+                        <asp:TextBox ID="dniClientEdit" runat="server" Visible="False"></asp:TextBox>
+                        <asp:TextBox ID="idReceptionistEdit" runat="server" Visible="False"></asp:TextBox>
+                        <asp:TextBox ID="entryDateDate" runat="server" Visible="False"></asp:TextBox>
+                        <asp:TextBox ID="exitDateEdit" runat="server" Visible="False"></asp:TextBox>
+                        <asp:TextBox ID="idRoomDate" runat="server" Visible="False"></asp:TextBox>
+                        <asp:Button ID="ApplyEdit" class="btn btn-info" runat="server" Text="Apply data edited" Visible="False" />
+                    </div>
+                    <div class="col-4  d-flex justify-content-center">
+                        <asp:Button ID="EditClient" class="btn btn-info" runat="server" Text="Edit client" OnClick="EditClient_Click" />
+                        
+                    </div>
+                    <div class="col-4 d-flex justify-content-center">
+                        <asp:Button ID="EditReceptionist" class="btn btn-info" runat="server" Text="Edit receptionist" OnClick="EditReceptionist_Click" />
+                        
+                    </div>
+               </div>
             </form>
         </div>
     </div>
