@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using HotelSanJavaierWeb.referencia1;
 using System.Data;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace HotelSanJavaierWeb
 {
@@ -44,6 +46,7 @@ namespace HotelSanJavaierWeb
             }
             else
             {
+                System.Windows.Forms.MessageBox.Show("Incorrect credentials", "Please, try again", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -78,6 +81,7 @@ namespace HotelSanJavaierWeb
             }
             else
             {
+                System.Windows.Forms.MessageBox.Show("Incorrect credentials", "Please, try again", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
     }
