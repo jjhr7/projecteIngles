@@ -51,7 +51,6 @@ namespace HotelSanJavaierWeb
                 sb.Append("<td>" + dr["exit_date"].ToString() + "</td>");
                 sb.Append("</tr>");
 
-                //idReserves += dr["id"].ToString();
 
             }
 

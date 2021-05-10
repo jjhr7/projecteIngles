@@ -23,6 +23,7 @@ namespace HotelSanJavaierWeb
             {
                 nameReceptionist = dr["name"].ToString();
             }
+
             DataTable listReservations;
             DataTable listClients;
 
@@ -30,6 +31,37 @@ namespace HotelSanJavaierWeb
             {
                 listReservations = ws.getAllReservetions();
                 listClients = ws.getClients();
+                DataTable listReceptionist= ws.getReceptionists();
+
+                StringBuilder sb3 = new StringBuilder();
+                sb3.Append(" <h2>List of Receptionists</h2>");
+                sb3.Append("<table class=\"table table-striped\" id=\"listReservations\">");
+                sb3.Append("<thead class=\"thead-dark\">");
+                sb3.Append("<tr>");
+                sb3.Append("<th scope=\"col\">ID RECEPTIONIST</th>");
+                sb3.Append("<th scope=\"col\">NAME RECEPTIONIST</th>");
+                sb3.Append("<th scope=\"col\">SURNAME RECEPTIONS</th>");
+                sb3.Append("<th scope=\"col\">DNI RECEPTIONIST</th>");
+                sb3.Append("<th scope=\"col\">ROL RECEPTIONIST</th>");
+                sb3.Append("</tr>");
+                sb3.Append("</thead>");
+                sb3.Append("<tbody id=\"reservationsData\">");
+
+                foreach (DataRow dr in listReceptionist.Rows)
+                {
+                    sb3.Append("<tr>");
+                    sb3.Append("<th scope=\"row\">" + dr["id"].ToString() + "</th>");
+                    sb3.Append("<td>" + dr["name"].ToString() + "</td>");
+                    sb3.Append("<td>" + dr["last_name"].ToString() + "</td>");
+                    sb3.Append("<td>" + dr["dni"].ToString() + "</td>");
+                    sb3.Append("<td>" + dr["rol"].ToString() + "</td>");
+                    sb3.Append("</tr>");
+
+                }
+
+                sb3.Append("</tbody>");
+                sb3.Append("</table>");
+                Panel4.Controls.Add(new Label { Text = sb3.ToString() });
             }
             else
             {
@@ -79,6 +111,7 @@ namespace HotelSanJavaierWeb
             sb2.Append("<th scope=\"col\">NAME</th>");
             sb2.Append("<th scope=\"col\">SURNAME</th>");
             sb2.Append("<th scope=\"col\">EMAIL</th>");
+            sb2.Append("<th scope=\"col\">ID RECEPTIONIST</th>");
             sb2.Append("</tr>");
             sb2.Append("</thead>");
             sb2.Append("<tbody id=\"clientssData\">");
@@ -91,6 +124,7 @@ namespace HotelSanJavaierWeb
                 sb2.Append("<td>" + dr["name"].ToString() + "</td>");
                 sb2.Append("<td>" + dr["surname"].ToString() + "</td>");
                 sb2.Append("<td>" + dr["email"].ToString() + "</td>");
+                sb2.Append("<td>" + dr["id_receptionist"].ToString() + "</td>");
                 sb2.Append("</tr>");
 
             }
@@ -118,7 +152,6 @@ namespace HotelSanJavaierWeb
                 rolReceptionistCast = Int32.Parse(dr["rol"].ToString());
 
             }
-            Label2.Text += "El rol del usuario es" + rolReceptionistCast;
 
             if (rolReceptionistCast == 1)
             {
@@ -131,6 +164,10 @@ namespace HotelSanJavaierWeb
 
 
             }
+            Panel1.Controls.Clear();
+            Panel2.Controls.Clear();
+            Panel4.Controls.Clear();
+            Page_Load(this,null);
         }
 
         protected void Button2_Click(object sender, EventArgs e)
@@ -145,7 +182,10 @@ namespace HotelSanJavaierWeb
 
             ws.addReservation(dniClient, Convert.ToInt32(idReceptionist), entryDate, exitDate, idRoom);
 
-
+            Panel1.Controls.Clear();
+            Panel2.Controls.Clear();
+            Panel4.Controls.Clear();
+            Page_Load(this, null);
         }
 
         protected void Button3_Click(object sender, EventArgs e)
@@ -162,7 +202,10 @@ namespace HotelSanJavaierWeb
 
             ws.addClient(dniClient, password, Int32.Parse(telephone), nameClient, surname, email, idReceptionist);
 
-
+            Panel1.Controls.Clear();
+            Panel2.Controls.Clear();
+            Panel4.Controls.Clear();
+            Page_Load(this, null);
         }
     }
 }

@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <asp:Label ID="Label1" runat="server" Text="" style="margin-top: 5%; text-align-last: center"></asp:Label>
-            <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+            <asp:Panel ID="Panel3" runat="server"></asp:Panel>
             <div class="offset-1 col-10">
                 <h2>List of reserves</h2>
                 <asp:Panel class="tableClients" ID="Panel1" runat="server"></asp:Panel>
@@ -15,7 +15,9 @@
                 <h2>List of clients</h2>
                 <asp:Panel class="tableClients" ID="Panel2" runat="server"></asp:Panel>
             </div>
-
+            <div class="offset-1 col-10"> 
+                <asp:Panel class="tableClients" ID="Panel4" runat="server"></asp:Panel>
+            </div>
             <form id="form1" runat="server" style="margin-bottom: 10%; background-color: rgba(0,0,0,0.3);">
                 <div class="row" style="text-align: justify;">
                     <div class="col-4" style="text-align: -webkit-center;">

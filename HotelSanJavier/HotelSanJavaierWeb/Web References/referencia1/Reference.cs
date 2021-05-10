@@ -34,6 +34,8 @@ namespace HotelSanJavaierWeb.referencia1 {
         
         private System.Threading.SendOrPostCallback getClientsOperationCompleted;
         
+        private System.Threading.SendOrPostCallback getReceptionistsOperationCompleted;
+        
         private System.Threading.SendOrPostCallback getClientsByReceptionistOperationCompleted;
         
         private System.Threading.SendOrPostCallback loginClientOperationCompleted;
@@ -113,6 +115,9 @@ namespace HotelSanJavaierWeb.referencia1 {
         
         /// <remarks/>
         public event getClientsCompletedEventHandler getClientsCompleted;
+        
+        /// <remarks/>
+        public event getReceptionistsCompletedEventHandler getReceptionistsCompleted;
         
         /// <remarks/>
         public event getClientsByReceptionistCompletedEventHandler getClientsByReceptionistCompleted;
@@ -219,6 +224,33 @@ namespace HotelSanJavaierWeb.referencia1 {
             if ((this.getClientsCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.getClientsCompleted(this, new getClientsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/getReceptionists", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable getReceptionists() {
+            object[] results = this.Invoke("getReceptionists", new object[0]);
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getReceptionistsAsync() {
+            this.getReceptionistsAsync(null);
+        }
+        
+        /// <remarks/>
+        public void getReceptionistsAsync(object userState) {
+            if ((this.getReceptionistsOperationCompleted == null)) {
+                this.getReceptionistsOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetReceptionistsOperationCompleted);
+            }
+            this.InvokeAsync("getReceptionists", new object[0], this.getReceptionistsOperationCompleted, userState);
+        }
+        
+        private void OngetReceptionistsOperationCompleted(object arg) {
+            if ((this.getReceptionistsCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getReceptionistsCompleted(this, new getReceptionistsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -811,6 +843,32 @@ namespace HotelSanJavaierWeb.referencia1 {
         private object[] results;
         
         internal getClientsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void getReceptionistsCompletedEventHandler(object sender, getReceptionistsCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getReceptionistsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getReceptionistsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

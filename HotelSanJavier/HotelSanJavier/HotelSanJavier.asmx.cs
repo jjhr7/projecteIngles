@@ -51,6 +51,27 @@ namespace HotelSanJavier
         }
 
         [WebMethod]
+        public DataTable getReceptionists()
+        {
+            string DBpath = Server.MapPath("HotelSanJavier.db");
+
+            DataTable dt = new DataTable();
+
+
+            using (SQLiteConnection conn = new SQLiteConnection("Data Source=" + DBpath + ";Version=3;"))
+            {
+                conn.Open();
+                SQLiteCommand comm = new SQLiteCommand("SELECT * FROM recepcionists", conn);
+                SQLiteDataReader reader = comm.ExecuteReader();
+                dt.Load(reader);
+                conn.Close();
+            }
+
+
+            return dt;
+        }
+
+        [WebMethod]
         public DataTable getClientsByReceptionist(int idReceptionist)
         {
             string DBpath = Server.MapPath("HotelSanJavier.db");

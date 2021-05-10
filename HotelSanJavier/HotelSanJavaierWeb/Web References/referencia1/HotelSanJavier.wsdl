@@ -29,6 +29,23 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="getReceptionists">
+        <s:complexType />
+      </s:element>
+      <s:element name="getReceptionistsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getReceptionistsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="getClientsByReceptionist">
         <s:complexType>
           <s:sequence>
@@ -296,6 +313,12 @@
   <wsdl:message name="getClientsSoapOut">
     <wsdl:part name="parameters" element="tns:getClientsResponse" />
   </wsdl:message>
+  <wsdl:message name="getReceptionistsSoapIn">
+    <wsdl:part name="parameters" element="tns:getReceptionists" />
+  </wsdl:message>
+  <wsdl:message name="getReceptionistsSoapOut">
+    <wsdl:part name="parameters" element="tns:getReceptionistsResponse" />
+  </wsdl:message>
   <wsdl:message name="getClientsByReceptionistSoapIn">
     <wsdl:part name="parameters" element="tns:getClientsByReceptionist" />
   </wsdl:message>
@@ -413,6 +436,10 @@
       <wsdl:input message="tns:getClientsSoapIn" />
       <wsdl:output message="tns:getClientsSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="getReceptionists">
+      <wsdl:input message="tns:getReceptionistsSoapIn" />
+      <wsdl:output message="tns:getReceptionistsSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="getClientsByReceptionist">
       <wsdl:input message="tns:getClientsByReceptionistSoapIn" />
       <wsdl:output message="tns:getClientsByReceptionistSoapOut" />
@@ -499,6 +526,15 @@
     </wsdl:operation>
     <wsdl:operation name="getClients">
       <soap:operation soapAction="http://tempuri.org/getClients" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getReceptionists">
+      <soap:operation soapAction="http://tempuri.org/getReceptionists" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -682,6 +718,15 @@
     </wsdl:operation>
     <wsdl:operation name="getClients">
       <soap12:operation soapAction="http://tempuri.org/getClients" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getReceptionists">
+      <soap12:operation soapAction="http://tempuri.org/getReceptionists" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -58,3 +58,4 @@ C:\ProyectosGTI\Segundo\SegundoCuatri\ProyctoIngles\projecteIngles\HotelSanJavie
 C:\ProyectosGTI\Segundo\SegundoCuatri\ProyctoIngles\projecteIngles\HotelSanJavier\HotelSanJavier\obj\Debug\HotelSanJavier.pdb
 C:\ProyectosGTI\Segundo\SegundoCuatri\ProyctoIngles\projecteIngles\HotelSanJavier\HotelSanJavier\bin\System.Data.SQLite.dll
 C:\ProyectosGTI\Segundo\SegundoCuatri\ProyctoIngles\projecteIngles\HotelSanJavier\HotelSanJavier\bin\System.Data.SQLite.xml
+C:\ProyectosGTI\Segundo\SegundoCuatri\ProyctoIngles\projecteIngles\HotelSanJavier\HotelSanJavier\obj\Debug\HotelSanJavierWebService.csprojAssemblyReference.cache
