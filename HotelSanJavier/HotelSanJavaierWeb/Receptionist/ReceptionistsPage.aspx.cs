@@ -281,6 +281,9 @@ namespace HotelSanJavaierWeb
         {
             idReservationEdit.Visible = true;
             findDataToEdit.Visible = true;
+            deleteReceptionist.Visible = false;
+            deleteClient.Visible = false;
+            deleteReservation.Visible = true;
 
             ApplyReceptionistUpdate.Visible = false;
             ApplyClientUpdate.Visible = false;
@@ -338,6 +341,9 @@ namespace HotelSanJavaierWeb
             dniClientUpdate.Visible = true;
             findClientUpdate.Visible = true;
             dniClientEdit.Visible = false;
+            deleteReceptionist.Visible = false;
+            deleteClient.Visible = true;
+            deleteReservation.Visible = false;
 
             ApplyEdit.Visible = false;
             idReceptionistToEdit.Visible = false;
@@ -368,6 +374,9 @@ namespace HotelSanJavaierWeb
             idReceptionistToEdit.Visible = true;
             findReceptionistUpdate.Visible = true;
             dniClientEdit.Visible = false;
+            deleteReceptionist.Visible = true;
+            deleteClient.Visible = false;
+            deleteReservation.Visible = false;
 
             ApplyEdit.Visible = false;
             ApplyClientUpdate.Visible = false;
@@ -426,6 +435,8 @@ namespace HotelSanJavaierWeb
                 ApplyEdit.Visible = true;
                 findDataToEdit.Visible = false;
                 idReservationEdit.Visible = false;
+
+                deleteReservation.Visible = false;
 
                 foreach (DataRow dr in reservationData.Rows)
                 {
@@ -495,6 +506,8 @@ namespace HotelSanJavaierWeb
                 findClientUpdate.Visible = false;
                 dniClientUpdate.Visible = false;
 
+                deleteClient.Visible = false;
+
                 if (Int32.Parse(Session["idReceptionist"].ToString()) != 1)
                 {
                     idReceptionistClientUpdate.Visible = true;
@@ -537,6 +550,8 @@ namespace HotelSanJavaierWeb
                 dniClientUpdate.Visible = false;
                 findReceptionistUpdate.Visible = false;
                 idReceptionistToEdit.Visible = false;
+
+                deleteReceptionist.Visible = false;
 
                 if (Int32.Parse(Session["idReceptionist"].ToString()) != 1)
                 {
@@ -622,5 +637,70 @@ namespace HotelSanJavaierWeb
 
         }
 
+        protected void DeleteReservation_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                HotelSanJavier ws = new HotelSanJavier();
+                int idReservation = Int32.Parse(idReservationEdit.Text);
+                ws.removeReservation(idReservation);
+
+
+                findDataToEdit.Visible = false;
+                idReservationEdit.Visible = false;
+
+                deleteReservation.Visible = false;
+
+            }
+            catch (Exception err)
+            {
+
+            }
+
+        } 
+        protected void DeleteReceptionist_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                HotelSanJavier ws = new HotelSanJavier();
+                int idReceptionist = Int32.Parse(idReceptionistToEdit.Text);
+                ws.removeRecepcionist(idReceptionist);
+
+
+                dniClientEdit.Visible = false;
+                dniClientUpdate.Visible = false;
+                findReceptionistUpdate.Visible = false;
+                idReceptionistToEdit.Visible = false;
+
+                deleteReceptionist.Visible = false;
+            }
+            catch (Exception err)
+            {
+
+            }
+
+        } protected void DeleteClient_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                HotelSanJavier ws = new HotelSanJavier();
+                string dniClient = dniClientUpdate.Text;
+                ws.removeClient(dniClient);
+
+
+                dniClientEdit.Visible = false;
+                findClientUpdate.Visible = false;
+                dniClientUpdate.Visible = false;
+
+                deleteClient.Visible = false;
+            }
+            catch (Exception err)
+            {
+
+            }
+
+        }
+
     }
+
 }

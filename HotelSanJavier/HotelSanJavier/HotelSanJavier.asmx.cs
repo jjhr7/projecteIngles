@@ -402,7 +402,7 @@ namespace HotelSanJavier
         }
 
         [WebMethod]
-        public void removeRecepcionists()
+        public void removeRecepcionist(int idReceptionist)
         {
             string DBpath = Server.MapPath("HotelSanJavier.db");
 
@@ -411,7 +411,7 @@ namespace HotelSanJavier
             using (SQLiteConnection conn = new SQLiteConnection("Data Source=" + DBpath + ";Version=3;"))
             {
                 conn.Open();
-                SQLiteCommand comm = new SQLiteCommand("SELECT * FROM reservations ;", conn);
+                SQLiteCommand comm = new SQLiteCommand("DELETE FROM recepcionists WHERE id=" + idReceptionist + ";", conn);
                 SQLiteDataReader reader = comm.ExecuteReader();
                 dt.Load(reader);
                 conn.Close();
@@ -420,7 +420,7 @@ namespace HotelSanJavier
         }
 
         [WebMethod]
-        public void removeClient()
+        public void removeClient(string dniClient)
         {
             string DBpath = Server.MapPath("HotelSanJavier.db");
 
@@ -429,7 +429,7 @@ namespace HotelSanJavier
             using (SQLiteConnection conn = new SQLiteConnection("Data Source=" + DBpath + ";Version=3;"))
             {
                 conn.Open();
-                SQLiteCommand comm = new SQLiteCommand("SELECT * FROM reservations ;", conn);
+                SQLiteCommand comm = new SQLiteCommand("DELETE FROM clients WHERE dni=" + dniClient + ";", conn);
                 SQLiteDataReader reader = comm.ExecuteReader();
                 dt.Load(reader);
                 conn.Close();
@@ -439,7 +439,7 @@ namespace HotelSanJavier
 
 
         [WebMethod]
-        public void removeReservation()
+        public void removeReservation(int idReservation)
         {
             string DBpath = Server.MapPath("HotelSanJavier.db");
 
@@ -448,7 +448,7 @@ namespace HotelSanJavier
             using (SQLiteConnection conn = new SQLiteConnection("Data Source=" + DBpath + ";Version=3;"))
             {
                 conn.Open();
-                SQLiteCommand comm = new SQLiteCommand("SELECT * FROM reservations ;", conn);
+                SQLiteCommand comm = new SQLiteCommand("DELETE FROM reservations WHERE id=" + idReservation + ";", conn);
                 SQLiteDataReader reader = comm.ExecuteReader();
                 dt.Load(reader);
                 conn.Close();

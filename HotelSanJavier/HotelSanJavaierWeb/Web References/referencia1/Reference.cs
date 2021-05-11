@@ -68,7 +68,7 @@ namespace HotelSanJavaierWeb.referencia1 {
         
         private System.Threading.SendOrPostCallback editReservationOperationCompleted;
         
-        private System.Threading.SendOrPostCallback removeRecepcionistsOperationCompleted;
+        private System.Threading.SendOrPostCallback removeRecepcionistOperationCompleted;
         
         private System.Threading.SendOrPostCallback removeClientOperationCompleted;
         
@@ -172,7 +172,7 @@ namespace HotelSanJavaierWeb.referencia1 {
         public event editReservationCompletedEventHandler editReservationCompleted;
         
         /// <remarks/>
-        public event removeRecepcionistsCompletedEventHandler removeRecepcionistsCompleted;
+        public event removeRecepcionistCompletedEventHandler removeRecepcionistCompleted;
         
         /// <remarks/>
         public event removeClientCompletedEventHandler removeClientCompleted;
@@ -773,48 +773,52 @@ namespace HotelSanJavaierWeb.referencia1 {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/removeRecepcionists", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void removeRecepcionists() {
-            this.Invoke("removeRecepcionists", new object[0]);
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/removeRecepcionist", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void removeRecepcionist(int idReceptionist) {
+            this.Invoke("removeRecepcionist", new object[] {
+                        idReceptionist});
         }
         
         /// <remarks/>
-        public void removeRecepcionistsAsync() {
-            this.removeRecepcionistsAsync(null);
+        public void removeRecepcionistAsync(int idReceptionist) {
+            this.removeRecepcionistAsync(idReceptionist, null);
         }
         
         /// <remarks/>
-        public void removeRecepcionistsAsync(object userState) {
-            if ((this.removeRecepcionistsOperationCompleted == null)) {
-                this.removeRecepcionistsOperationCompleted = new System.Threading.SendOrPostCallback(this.OnremoveRecepcionistsOperationCompleted);
+        public void removeRecepcionistAsync(int idReceptionist, object userState) {
+            if ((this.removeRecepcionistOperationCompleted == null)) {
+                this.removeRecepcionistOperationCompleted = new System.Threading.SendOrPostCallback(this.OnremoveRecepcionistOperationCompleted);
             }
-            this.InvokeAsync("removeRecepcionists", new object[0], this.removeRecepcionistsOperationCompleted, userState);
+            this.InvokeAsync("removeRecepcionist", new object[] {
+                        idReceptionist}, this.removeRecepcionistOperationCompleted, userState);
         }
         
-        private void OnremoveRecepcionistsOperationCompleted(object arg) {
-            if ((this.removeRecepcionistsCompleted != null)) {
+        private void OnremoveRecepcionistOperationCompleted(object arg) {
+            if ((this.removeRecepcionistCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.removeRecepcionistsCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.removeRecepcionistCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/removeClient", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void removeClient() {
-            this.Invoke("removeClient", new object[0]);
+        public void removeClient(string dniClient) {
+            this.Invoke("removeClient", new object[] {
+                        dniClient});
         }
         
         /// <remarks/>
-        public void removeClientAsync() {
-            this.removeClientAsync(null);
+        public void removeClientAsync(string dniClient) {
+            this.removeClientAsync(dniClient, null);
         }
         
         /// <remarks/>
-        public void removeClientAsync(object userState) {
+        public void removeClientAsync(string dniClient, object userState) {
             if ((this.removeClientOperationCompleted == null)) {
                 this.removeClientOperationCompleted = new System.Threading.SendOrPostCallback(this.OnremoveClientOperationCompleted);
             }
-            this.InvokeAsync("removeClient", new object[0], this.removeClientOperationCompleted, userState);
+            this.InvokeAsync("removeClient", new object[] {
+                        dniClient}, this.removeClientOperationCompleted, userState);
         }
         
         private void OnremoveClientOperationCompleted(object arg) {
@@ -826,21 +830,23 @@ namespace HotelSanJavaierWeb.referencia1 {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/removeReservation", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void removeReservation() {
-            this.Invoke("removeReservation", new object[0]);
+        public void removeReservation(int idReservation) {
+            this.Invoke("removeReservation", new object[] {
+                        idReservation});
         }
         
         /// <remarks/>
-        public void removeReservationAsync() {
-            this.removeReservationAsync(null);
+        public void removeReservationAsync(int idReservation) {
+            this.removeReservationAsync(idReservation, null);
         }
         
         /// <remarks/>
-        public void removeReservationAsync(object userState) {
+        public void removeReservationAsync(int idReservation, object userState) {
             if ((this.removeReservationOperationCompleted == null)) {
                 this.removeReservationOperationCompleted = new System.Threading.SendOrPostCallback(this.OnremoveReservationOperationCompleted);
             }
-            this.InvokeAsync("removeReservation", new object[0], this.removeReservationOperationCompleted, userState);
+            this.InvokeAsync("removeReservation", new object[] {
+                        idReservation}, this.removeReservationOperationCompleted, userState);
         }
         
         private void OnremoveReservationOperationCompleted(object arg) {
@@ -1271,7 +1277,7 @@ namespace HotelSanJavaierWeb.referencia1 {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void removeRecepcionistsCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    public delegate void removeRecepcionistCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]

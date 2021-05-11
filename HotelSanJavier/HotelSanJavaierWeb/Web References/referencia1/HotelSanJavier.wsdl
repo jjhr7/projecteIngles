@@ -321,20 +321,32 @@
       <s:element name="editReservationResponse">
         <s:complexType />
       </s:element>
-      <s:element name="removeRecepcionists">
-        <s:complexType />
+      <s:element name="removeRecepcionist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idReceptionist" type="s:int" />
+          </s:sequence>
+        </s:complexType>
       </s:element>
-      <s:element name="removeRecepcionistsResponse">
+      <s:element name="removeRecepcionistResponse">
         <s:complexType />
       </s:element>
       <s:element name="removeClient">
-        <s:complexType />
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dniClient" type="s:string" />
+          </s:sequence>
+        </s:complexType>
       </s:element>
       <s:element name="removeClientResponse">
         <s:complexType />
       </s:element>
       <s:element name="removeReservation">
-        <s:complexType />
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idReservation" type="s:int" />
+          </s:sequence>
+        </s:complexType>
       </s:element>
       <s:element name="removeReservationResponse">
         <s:complexType />
@@ -470,11 +482,11 @@
   <wsdl:message name="editReservationSoapOut">
     <wsdl:part name="parameters" element="tns:editReservationResponse" />
   </wsdl:message>
-  <wsdl:message name="removeRecepcionistsSoapIn">
-    <wsdl:part name="parameters" element="tns:removeRecepcionists" />
+  <wsdl:message name="removeRecepcionistSoapIn">
+    <wsdl:part name="parameters" element="tns:removeRecepcionist" />
   </wsdl:message>
-  <wsdl:message name="removeRecepcionistsSoapOut">
-    <wsdl:part name="parameters" element="tns:removeRecepcionistsResponse" />
+  <wsdl:message name="removeRecepcionistSoapOut">
+    <wsdl:part name="parameters" element="tns:removeRecepcionistResponse" />
   </wsdl:message>
   <wsdl:message name="removeClientSoapIn">
     <wsdl:part name="parameters" element="tns:removeClient" />
@@ -571,9 +583,9 @@
       <wsdl:input message="tns:editReservationSoapIn" />
       <wsdl:output message="tns:editReservationSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="removeRecepcionists">
-      <wsdl:input message="tns:removeRecepcionistsSoapIn" />
-      <wsdl:output message="tns:removeRecepcionistsSoapOut" />
+    <wsdl:operation name="removeRecepcionist">
+      <wsdl:input message="tns:removeRecepcionistSoapIn" />
+      <wsdl:output message="tns:removeRecepcionistSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="removeClient">
       <wsdl:input message="tns:removeClientSoapIn" />
@@ -761,8 +773,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="removeRecepcionists">
-      <soap:operation soapAction="http://tempuri.org/removeRecepcionists" style="document" />
+    <wsdl:operation name="removeRecepcionist">
+      <soap:operation soapAction="http://tempuri.org/removeRecepcionist" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -971,8 +983,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="removeRecepcionists">
-      <soap12:operation soapAction="http://tempuri.org/removeRecepcionists" style="document" />
+    <wsdl:operation name="removeRecepcionist">
+      <soap12:operation soapAction="http://tempuri.org/removeRecepcionist" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -15,6 +15,15 @@ namespace HotelSanJavaierWeb
     {
 
         /// <summary>
+        /// Control form1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+
+        /// <summary>
         /// Control Label1.
         /// </summary>
         /// <remarks>
@@ -42,6 +51,15 @@ namespace HotelSanJavaierWeb
         protected global::System.Web.UI.WebControls.Panel Panel1;
 
         /// <summary>
+        /// Control jsonReservations.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button jsonReservations;
+
+        /// <summary>
         /// Control Panel2.
         /// </summary>
         /// <remarks>
@@ -58,15 +76,6 @@ namespace HotelSanJavaierWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel Panel4;
-
-        /// <summary>
-        /// Control form1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
         /// Control dniClientC.
@@ -276,6 +285,15 @@ namespace HotelSanJavaierWeb
         protected global::System.Web.UI.WebControls.Button findDataToEdit;
 
         /// <summary>
+        /// Control deleteReservation.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button deleteReservation;
+
+        /// <summary>
         /// Control dniClientEdit.
         /// </summary>
         /// <remarks>
@@ -346,6 +364,15 @@ namespace HotelSanJavaierWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button findClientUpdate;
+
+        /// <summary>
+        /// Control deleteClient.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button deleteClient;
 
         /// <summary>
         /// Control passwordClientUpdate.
@@ -429,6 +456,15 @@ namespace HotelSanJavaierWeb
         protected global::System.Web.UI.WebControls.Button findReceptionistUpdate;
 
         /// <summary>
+        /// Control deleteReceptionist.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button deleteReceptionist;
+
+        /// <summary>
         /// Control nameReceptionistToEdit.
         /// </summary>
         /// <remarks>
@@ -481,14 +517,5 @@ namespace HotelSanJavaierWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ApplyReceptionistUpdate;
-
-        /// <summary>
-        /// Control jsonReservations.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button jsonReservations;
     }
 }
