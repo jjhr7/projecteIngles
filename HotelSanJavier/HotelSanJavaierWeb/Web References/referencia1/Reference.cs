@@ -74,6 +74,8 @@ namespace HotelSanJavaierWeb.referencia1 {
         
         private System.Threading.SendOrPostCallback removeReservationOperationCompleted;
         
+        private System.Threading.SendOrPostCallback editReceptionistOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -177,6 +179,9 @@ namespace HotelSanJavaierWeb.referencia1 {
         
         /// <remarks/>
         public event removeReservationCompletedEventHandler removeReservationCompleted;
+        
+        /// <remarks/>
+        public event editReceptionistCompletedEventHandler editReceptionistCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/HelloWorld", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -846,6 +851,44 @@ namespace HotelSanJavaierWeb.referencia1 {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/editReceptionist", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void editReceptionist(int id, string name, string last_name, string dni, int rol, string password) {
+            this.Invoke("editReceptionist", new object[] {
+                        id,
+                        name,
+                        last_name,
+                        dni,
+                        rol,
+                        password});
+        }
+        
+        /// <remarks/>
+        public void editReceptionistAsync(int id, string name, string last_name, string dni, int rol, string password) {
+            this.editReceptionistAsync(id, name, last_name, dni, rol, password, null);
+        }
+        
+        /// <remarks/>
+        public void editReceptionistAsync(int id, string name, string last_name, string dni, int rol, string password, object userState) {
+            if ((this.editReceptionistOperationCompleted == null)) {
+                this.editReceptionistOperationCompleted = new System.Threading.SendOrPostCallback(this.OneditReceptionistOperationCompleted);
+            }
+            this.InvokeAsync("editReceptionist", new object[] {
+                        id,
+                        name,
+                        last_name,
+                        dni,
+                        rol,
+                        password}, this.editReceptionistOperationCompleted, userState);
+        }
+        
+        private void OneditReceptionistOperationCompleted(object arg) {
+            if ((this.editReceptionistCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.editReceptionistCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -1237,6 +1280,10 @@ namespace HotelSanJavaierWeb.referencia1 {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void removeReservationCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    public delegate void editReceptionistCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
 }
 
 #pragma warning restore 1591

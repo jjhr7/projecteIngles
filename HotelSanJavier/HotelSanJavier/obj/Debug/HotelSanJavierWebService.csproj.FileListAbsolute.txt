@@ -84,3 +84,5 @@ C:\ProyectosGTI\Segundo\SegundoCuatri\ProyctoIngles\projecteIngles\HotelSanJavie
 C:\ProyectosGTI\Segundo\SegundoCuatri\ProyctoIngles\projecteIngles\HotelSanJavier\HotelSanJavier\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
 C:\ProyectosGTI\Segundo\SegundoCuatri\ProyctoIngles\projecteIngles\HotelSanJavier\HotelSanJavier\bin\Newtonsoft.Json.dll
 C:\ProyectosGTI\Segundo\SegundoCuatri\ProyctoIngles\projecteIngles\HotelSanJavier\HotelSanJavier\bin\Newtonsoft.Json.xml
+C:\Users\Pere\Desktop\ProjecteIngles\HotelSanJavier\HotelSanJavier\bin\Newtonsoft.Json.dll
+C:\Users\Pere\Desktop\ProjecteIngles\HotelSanJavier\HotelSanJavier\bin\Newtonsoft.Json.xml

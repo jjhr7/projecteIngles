@@ -240,6 +240,24 @@ namespace HotelSanJavaierWeb
         protected global::System.Web.UI.WebControls.Button EditReservation;
 
         /// <summary>
+        /// Control EditReceptionist.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button EditReceptionist;
+
+        /// <summary>
+        /// Control EditClient.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button EditClient;
+
+        /// <summary>
         /// Control idReservationEdit.
         /// </summary>
         /// <remarks>
@@ -310,15 +328,6 @@ namespace HotelSanJavaierWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ApplyEdit;
-
-        /// <summary>
-        /// Control EditClient.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button EditClient;
 
         /// <summary>
         /// Control dniClientUpdate.
@@ -402,13 +411,76 @@ namespace HotelSanJavaierWeb
         protected global::System.Web.UI.WebControls.Button ApplyClientUpdate;
 
         /// <summary>
-        /// Control EditReceptionist.
+        /// Control idReceptionistToEdit.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button EditReceptionist;
+        protected global::System.Web.UI.WebControls.TextBox idReceptionistToEdit;
+
+        /// <summary>
+        /// Control findReceptionistUpdate.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button findReceptionistUpdate;
+
+        /// <summary>
+        /// Control nameReceptionistToEdit.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox nameReceptionistToEdit;
+
+        /// <summary>
+        /// Control surnameReceptionistToEdit.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox surnameReceptionistToEdit;
+
+        /// <summary>
+        /// Control dniReceptionistToUpdate.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox dniReceptionistToUpdate;
+
+        /// <summary>
+        /// Control rolReceptionistToEdit.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox rolReceptionistToEdit;
+
+        /// <summary>
+        /// Control passReceptionistToEdit.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox passReceptionistToEdit;
+
+        /// <summary>
+        /// Control ApplyReceptionistUpdate.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ApplyReceptionistUpdate;
 
         /// <summary>
         /// Control jsonReservations.

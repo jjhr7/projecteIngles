@@ -455,5 +455,22 @@ namespace HotelSanJavier
             }
 
         }
+
+        [WebMethod]
+        public void editReceptionist(int id, string name, string last_name, string dni, int rol, string password)
+        {
+            string DBpath = Server.MapPath("HotelSanJavier.db");
+            DataTable dt = new DataTable();
+
+            using (SQLiteConnection conn = new SQLiteConnection("Data Source=" + DBpath + ";Version=3;"))
+            {
+                conn.Open();
+                SQLiteCommand comm = new SQLiteCommand("UPDATE  recepcionists SET name = " + name + ", last_name = '" + last_name + "', dni = '" + dni + "', rol ='" + rol + "', password = " + password + " WHERE id = '" + id + "' ;", conn);
+                SQLiteDataAdapter da = new SQLiteDataAdapter();
+                da.InsertCommand = comm;
+                da.InsertCommand.ExecuteNonQuery();
+                conn.Close();
+            }
+        }
     }
 }

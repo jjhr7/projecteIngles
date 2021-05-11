@@ -19,6 +19,7 @@ namespace HotelSanJavaierWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["authentication"] = false;
+            
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -28,7 +29,7 @@ namespace HotelSanJavaierWeb
             string dniC = dniClient.Text;
             string passwordC = passwordClient.Text;
 
-           bool existe = ws.loginClient(dniC, passwordC);
+            bool existe = ws.loginClient(dniC, passwordC);
             DataTable clientData;
 
             if (existe)
@@ -37,28 +38,35 @@ namespace HotelSanJavaierWeb
                 clientData = ws.getClient(dniC);
 
 
+                    foreach (DataRow dr in clientData.Rows)
+                    {
+                        dniClient = dr["dni"].ToString();
 
-                foreach (DataRow dr in clientData.Rows)
-                {
-                    dniClient = dr["dni"].ToString();
+                    }
 
-                }
+                    FormsAuthentication.SetAuthCookie("user", true);
+                    Session["authentication"] = true;
+                    Session["dniClient"] = dniClient;
+                    Response.Redirect("./Client/ClientsPage.aspx");
+                    
 
-                FormsAuthentication.SetAuthCookie("user", true);
-                Session["authentication"] = true;
-                Session["dniClient"] = dniClient;
-                Response.Redirect("./Client/ClientsPage.aspx");
             }
             else
             {
+                dniClient.Text = "";
+                passwordClient.Text = "";
+                dniRecepcionist.Text = "";
+                passwordRecepcionist.Text = "";
                 System.Windows.Forms.MessageBox.Show("Incorrect credentials", "Please, try again", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+           
+
+            
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
             HotelSanJavier ws = new HotelSanJavier();
-
             string dniR = dniRecepcionist.Text;
             string passwordR = passwordRecepcionist.Text;
 
@@ -85,11 +93,19 @@ namespace HotelSanJavaierWeb
                 Session["idReceptionist"] = idReceptionist;
                 Response.Redirect("./Receptionist/ReceptionistsPage.aspx");
 
+
             }
             else
             {
+                dniClient.Text = "";
+                passwordClient.Text = "";
+                dniRecepcionist.Text = "";
+                passwordRecepcionist.Text = "";
                 System.Windows.Forms.MessageBox.Show("Incorrect credentials", "Please, try again", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
             }
+            
+            
         }
     }
 }
