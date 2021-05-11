@@ -82,9 +82,9 @@
                         <asp:TextBox ID="idReservationEdit" runat="server" placeholder="Id reservation to edit" Display="none" Visible="False"></asp:TextBox>
                         <div class="row">
                             <div class="col-2"></div>
-                            <asp:Button ID="findDataToEdit" class="col-3 btn btn-info" Visible="False" Display="none" runat="server" Text="Edit reservation" OnClick="findDataToEdit_Click" />
+                            <asp:Button ID="findDataToEdit" class=" btn btn-info" Visible="False" Display="none" runat="server" Text="Edit reservation" OnClick="findDataToEdit_Click" />
 
-                            <asp:Button ID="deleteReservation" class="col-3 btn btn btn-danger" visible="false" runat="server" Text="Delete reservation" OnClick="DeleteReservation_Click" />
+                            <asp:Button ID="deleteReservation" class=" btn btn-danger" visible="false" runat="server" Text="Delete reservation" OnClick="DeleteReservation_Click" />
    
                         </div>
                         
@@ -103,10 +103,10 @@
                     <div class="offset-4 col-5 align-middle"  style="text-align-last: center;" ID="divClientEdit" Visible="false">
                         <asp:TextBox ID="dniClientUpdate" runat="server" placeholder="Type the DNI client to edit"  Visible="False"></asp:TextBox>
         
-                        <asp:Button ID="findClientUpdate" class="btn btn-info" Visible="False" Display="none" runat="server" Text="Edit client" OnClick="Button4_Click"  />
+                        <asp:Button ID="findClientUpdate" class="btn btn-info align-middle" Visible="False" Display="none" runat="server" Text="Edit client" OnClick="Button4_Click"  />
 
                         
-                        <asp:Button ID="deleteClient"  class="btn btn btn-danger" runat="server" Text="Delete client" Visible="false" OnClick="DeleteClient_Click" />
+                        <asp:Button ID="deleteClient"  class="btn btn-danger align-middle" runat="server" Text="Delete client" Visible="false" OnClick="DeleteClient_Click" />
           
                         <asp:TextBox ID="passwordClientUpdate" runat="server" Visible="False" Display="none" placeholder="Password"></asp:TextBox>
      
@@ -120,15 +120,15 @@
    
                         <asp:TextBox ID="idReceptionistClientUpdate" runat="server" Visible="false" Display="none" placeholder="ID receptionist"></asp:TextBox>
               
-                        <asp:Button ID="ApplyClientUpdate" class="btn btn-info" runat="server" Display="none" Text="Apply client data edited" Visible="False" OnClick="ApplyClientUpdate_Click"  />
+                        <asp:Button ID="ApplyClientUpdate" class="btn btn-info align-middle" runat="server" Display="none" Text="Apply client data edited" Visible="False" OnClick="ApplyClientUpdate_Click"  />
 
                     </div>
                     <div class="offset-4 col-5 align-middle"  style="text-align-last: center;" ID="divReceptionistEdit" Visible="false">
                         <asp:TextBox ID="idReceptionistToEdit" runat="server" Display="none" placeholder="Type the ID receptionist to edit" Visible="False"></asp:TextBox>
                
-                        <asp:Button ID="findReceptionistUpdate" class="btn btn-info" Display="none" Visible="False" runat="server" Text="Edit receptionist" OnClick="Button5_Click"  />
+                        <asp:Button ID="findReceptionistUpdate" class="btn btn-info align-middle" Display="none" Visible="False" runat="server" Text="Edit receptionist" OnClick="Button5_Click"  />
             
-                        <asp:Button ID="deleteReceptionist"  class="btn btn btn-danger" runat="server" Text="Delete receptionist" OnClick="DeleteReceptionist_Click" visible="False"/>
+                        <asp:Button ID="deleteReceptionist"  class="btn btn-danger align-middle" runat="server" Text="Delete receptionist" OnClick="DeleteReceptionist_Click" visible="False"/>
 
                         <asp:TextBox ID="nameReceptionistToEdit" runat="server" Display="none" Visible="False" placeholder="Name"></asp:TextBox>
            
@@ -147,5 +147,4 @@
                 
             </form>
         </div>
-    </div>
 </asp:Content>

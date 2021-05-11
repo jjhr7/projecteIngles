@@ -18,24 +18,7 @@ namespace HotelSanJavaierWeb
         List<Reserve> reservations = new List<Reserve>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*findDataToEdit.Text = "";
-            dniClientEdit.Text = "";
-            idReceptionistEdit.Text = "";
-            entryDateEdit.Text = "";
-            exitDateEdit.Text = "";
-            idRoomEdit.Text = "";
-            findClientUpdate.Text = "";
-            passwordClientUpdate.Text = "";
-            telephoneClientUpdate.Text = "";
-            nameClietnUpdate.Text = "";
-            surnameClientUpdate.Text = "";
-            emailClientUpdate.Text = "";
-            idReceptionistClientUpdate.Text = "";
-            nameReceptionistToEdit.Text = "";
-            surnameReceptionistToEdit.Text = "";
-            dniReceptionistToUpdate.Text = "";
-            rolReceptionistToEdit.Text = "";
-            passReceptionistToEdit.Text = "";*/
+            
             try
             {
                 if (!(bool)Session["authentication"])
@@ -651,6 +634,11 @@ namespace HotelSanJavaierWeb
 
                 deleteReservation.Visible = false;
 
+                Panel1.Controls.Clear();
+                Panel2.Controls.Clear();
+                Panel4.Controls.Clear();
+                Page_Load(this, null);
+
             }
             catch (Exception err)
             {
@@ -673,6 +661,11 @@ namespace HotelSanJavaierWeb
                 idReceptionistToEdit.Visible = false;
 
                 deleteReceptionist.Visible = false;
+
+                Panel1.Controls.Clear();
+                Panel2.Controls.Clear();
+                Panel4.Controls.Clear();
+                Page_Load(this, null);
             }
             catch (Exception err)
             {
@@ -693,6 +686,11 @@ namespace HotelSanJavaierWeb
                 dniClientUpdate.Visible = false;
 
                 deleteClient.Visible = false;
+
+                Panel1.Controls.Clear();
+                Panel2.Controls.Clear();
+                Panel4.Controls.Clear();
+                Page_Load(this, null);
             }
             catch (Exception err)
             {
