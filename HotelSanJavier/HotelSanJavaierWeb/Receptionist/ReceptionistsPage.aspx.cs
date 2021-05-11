@@ -165,7 +165,7 @@ namespace HotelSanJavaierWeb
         protected void Button1_Click(object sender, EventArgs e)
         {
             HotelSanJavier ws = new HotelSanJavier();
-            string idReceptionist = Request.QueryString["idReceptionist"];
+            string idReceptionist = Session["idReceptionist"].ToString();
             int rolReceptionistCast = 0;
             DataTable receptionistData = ws.getReceptionistById(idReceptionist);
 
@@ -195,7 +195,7 @@ namespace HotelSanJavaierWeb
         protected void Button2_Click(object sender, EventArgs e)
         {
             HotelSanJavier ws = new HotelSanJavier();
-            string idReceptionist = Request.QueryString["idReceptionist"];
+            string idReceptionist = Session["idReceptionist"].ToString();
 
             string dniClient = dni_client.Text;
             string entryDate = entry_date.Text;
@@ -213,7 +213,7 @@ namespace HotelSanJavaierWeb
         protected void Button3_Click(object sender, EventArgs e)
         {
             HotelSanJavier ws = new HotelSanJavier();
-            int idReceptionist = Int32.Parse(Request.QueryString["idReceptionist"]);
+            int idReceptionist = Int32.Parse(Session["idReceptionist"].ToString());
 
             string dniClient = dniClientC.Text;
             string password = passwowrdClicentC.Text;
