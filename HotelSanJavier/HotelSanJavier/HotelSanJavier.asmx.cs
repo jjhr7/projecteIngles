@@ -253,6 +253,28 @@ namespace HotelSanJavier
 
         }
 
+
+        [WebMethod]
+        public DataTable getReservetionsById(int id)
+        {
+            string DBpath = Server.MapPath("HotelSanJavier.db");
+
+            DataTable dt = new DataTable();
+
+            using (SQLiteConnection conn = new SQLiteConnection("Data Source=" + DBpath + ";Version=3;"))
+            {
+                conn.Open();
+                SQLiteCommand comm = new SQLiteCommand("SELECT * FROM reservations WHERE `id` = " + id + " ;", conn);
+                SQLiteDataReader reader = comm.ExecuteReader();
+                dt.Load(reader);
+                conn.Close();
+            }
+            return dt;
+
+
+        }
+
+
         [WebMethod]
         public DataTable getAllReservetions()
         {
@@ -345,25 +367,24 @@ namespace HotelSanJavier
         }
 
         [WebMethod]
-        public void editClient()
+        public void editClient( string dni, string password, int telephone, string name, string surname, string email, int id_receptionist)
         {
             string DBpath = Server.MapPath("HotelSanJavier.db");
-
             DataTable dt = new DataTable();
 
             using (SQLiteConnection conn = new SQLiteConnection("Data Source=" + DBpath + ";Version=3;"))
             {
                 conn.Open();
-                SQLiteCommand comm = new SQLiteCommand("SELECT * FROM reservations ;", conn);
-                SQLiteDataReader reader = comm.ExecuteReader();
-                dt.Load(reader);
+                SQLiteCommand comm = new SQLiteCommand("UPDATE  clients SET password = '"+password+"', telephone = "+telephone+", name = '"+name+"', surname = '"+surname+"', email ='"+email+"', id_receptionist = "+id_receptionist+" WHERE dni = '"+dni+"' ;", conn);
+                SQLiteDataAdapter da = new SQLiteDataAdapter();
+                da.InsertCommand = comm;
+                da.InsertCommand.ExecuteNonQuery();
                 conn.Close();
             }
-
         }
 
         [WebMethod]
-        public void editReservation()
+        public void editReservation(int idReservation, string dni_client, int id_receptionist, string entry_date, string exit_date, int id_room)
         {
             string DBpath = Server.MapPath("HotelSanJavier.db");
 
@@ -372,12 +393,12 @@ namespace HotelSanJavier
             using (SQLiteConnection conn = new SQLiteConnection("Data Source=" + DBpath + ";Version=3;"))
             {
                 conn.Open();
-                SQLiteCommand comm = new SQLiteCommand("SELECT * FROM reservations ;", conn);
-                SQLiteDataReader reader = comm.ExecuteReader();
-                dt.Load(reader);
+                SQLiteCommand comm = new SQLiteCommand("UPDATE reservations SET dni_client = '"+dni_client+"', id_receptionist ="+id_receptionist+", entry_date = '" + entry_date +"', exit_date = '"+exit_date+"', id_room = "+id_room+" WHERE id ="+idReservation+";", conn);
+                SQLiteDataAdapter da = new SQLiteDataAdapter();
+                da.InsertCommand = comm;
+                da.InsertCommand.ExecuteNonQuery();
                 conn.Close();
             }
-
         }
 
         [WebMethod]

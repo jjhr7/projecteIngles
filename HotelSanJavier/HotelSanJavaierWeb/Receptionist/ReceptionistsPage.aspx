@@ -64,28 +64,54 @@
                 </div>
                 <div class="row ">
                     <h3 class="d-flex justify-content-center">Edit actions</h3>
-                    <div class="col-4 d-flex justify-content-center">
+                    <div class="offset-1 col-10 ">
                         <asp:Button ID="EditReservation" class="btn btn-info" runat="server" Text="Edit reservation" OnClick="EditReservatio_Click" />
+                        <br />
                         <asp:TextBox ID="idReservationEdit" runat="server" placeholder="Id reservation to edit" Visible="False"></asp:TextBox>
-                        <asp:Button ID="findDataToEdit"  Visible="False" runat="server" Text="Fetch reservation Data" />
+                       <br />
+                        <asp:Button ID="findDataToEdit" class="btn btn-info" Visible="False" runat="server" Text="Fetch reservation Data" OnClick="findDataToEdit_Click" />
+                        <br />
                         <asp:TextBox ID="dniClientEdit" runat="server" Visible="False"></asp:TextBox>
+                        <br />
                         <asp:TextBox ID="idReceptionistEdit" runat="server" Visible="False"></asp:TextBox>
-                        <asp:TextBox ID="entryDateDate" runat="server" Visible="False"></asp:TextBox>
+                        <br />
+                        <asp:TextBox ID="entryDateEdit" runat="server" Visible="False"></asp:TextBox>
+                        <br />
                         <asp:TextBox ID="exitDateEdit" runat="server" Visible="False"></asp:TextBox>
-                        <asp:TextBox ID="idRoomDate" runat="server" Visible="False"></asp:TextBox>
-                        <asp:Button ID="ApplyEdit" class="btn btn-info" runat="server" Text="Apply data edited" Visible="False" />
+                        <br />
+                        <asp:TextBox ID="idRoomEdit" runat="server" Visible="False"></asp:TextBox>
+                        <br />
+                        <asp:Button ID="ApplyEdit" class="btn btn-info" runat="server" Text="Apply Reservation data edited" Visible="False" OnClick="ApplyEdit_Click" />
+                        <br />
                     </div>
-                    <div class="col-4  d-flex justify-content-center">
+                    <div class="offset-1 col-10  ">
                         <asp:Button ID="EditClient" class="btn btn-info" runat="server" Text="Edit client" OnClick="EditClient_Click" />
-                        
+                        <br />
+                        <asp:TextBox ID="dniClientUpdate" runat="server" placeholder="Type the DNI client to edit" Visible="False"></asp:TextBox>
+                       <br />
+                        <asp:Button ID="findClientUpdate" class="btn btn-info" Visible="False" runat="server" Text="Fetch client Data" OnClick="Button4_Click"  />
+                        <br />
+                        <asp:TextBox ID="passwordClientUpdate" runat="server" Visible="False"></asp:TextBox>
+                        <br />
+                        <asp:TextBox ID="telephoneClientUpdate" runat="server" Visible="False"></asp:TextBox>
+                        <br />
+                        <asp:TextBox ID="nameClietnUpdate" runat="server" Visible="False"></asp:TextBox>
+                        <br />
+                        <asp:TextBox ID="surnameClientUpdate" runat="server" Visible="False"></asp:TextBox>
+                        <br />
+                        <asp:TextBox ID="emailClientUpdate" runat="server" Visible="False"></asp:TextBox>
+                        <br />
+                        <asp:TextBox ID="idReceptionistClientUpdate" runat="server" Visible="false"></asp:TextBox>
+                        <br />
+                        <asp:Button ID="ApplyClientUpdate" class="btn btn-info" runat="server" Text="Apply client data edited" Visible="False" OnClick="ApplyClientUpdate_Click"  />
                     </div>
-                    <div class="col-4 d-flex justify-content-center">
-                        <asp:Button ID="EditReceptionist" class="btn btn-info" runat="server" Text="Edit receptionist" OnClick="EditReceptionist_Click" />
+                    <div class="col-4 ">
+                        <asp:Button ID="EditReceptionist" class="btn btn-info" runat="server" Text="Edit receptionist" Visible="false" OnClick="EditReceptionist_Click" />
                         
                     </div>
                </div>
                 <div class="row">
-                    <div class="col-4"></div>
+                    <div class="offset-1 col-10"></div>
                     <asp:Button class="col-4 btn btn-success" Text="Download reservations" runat="server" ID="jsonReservations" OnClick="Unnamed1_Click" type="button"/>
                 </div>
             </form>

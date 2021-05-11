@@ -45,6 +45,7 @@ namespace HotelSanJavaierWeb
 
             if (Int32.Parse(idReceptionist) == 1)
             {
+
                 listReservations = ws.getAllReservetions();
                 listClients = ws.getClients();
                 DataTable listReceptionist= ws.getReceptionists();
@@ -78,6 +79,7 @@ namespace HotelSanJavaierWeb
                 sb3.Append("</tbody>");
                 sb3.Append("</table>");
                 Panel4.Controls.Add(new Label { Text = sb3.ToString() });
+                EditReceptionist.Visible = true;
             }
             else
             {
@@ -228,19 +230,17 @@ namespace HotelSanJavaierWeb
             Page_Load(this, null);
         }
 
-        protected void Edit_Button(object sender, EventArgs e)
-        {
-            
-        }
 
         protected void EditReservatio_Click(object sender, EventArgs e)
         {
-            
+            idReservationEdit.Visible = true;
+            findDataToEdit.Visible = true;
         }
 
         protected void EditClient_Click(object sender, EventArgs e)
         {
-
+            dniClientUpdate.Visible = true;
+            findClientUpdate.Visible = true;
         }
 
         protected void EditReceptionist_Click(object sender, EventArgs e)
@@ -266,6 +266,102 @@ namespace HotelSanJavaierWeb
             }
 
 
+        }
+
+        protected void findDataToEdit_Click(object sender, EventArgs e)
+        {
+            HotelSanJavier ws = new HotelSanJavier();
+            DataTable reservationData = ws.getReservetionsById(Int32.Parse(idReservationEdit.Text.ToString()));
+            idReservationEdit.Enabled = false;
+            dniClientEdit.Visible = true;
+            idReceptionistEdit.Visible = true;
+            entryDateEdit.Visible = true;
+            exitDateEdit.Visible = true;
+            idRoomEdit.Visible = true;
+            ApplyEdit.Visible = true;
+
+            foreach (DataRow dr in reservationData.Rows)
+            {
+                dniClientEdit.Text = dr["dni_client"].ToString();
+                idReceptionistEdit.Text = dr["id_receptionist"].ToString();
+                entryDateEdit.Text = dr["entry_date"].ToString();
+                exitDateEdit.Text = dr["exit_date"].ToString();
+                idRoomEdit.Text = dr["id_room"].ToString();
+
+
+            }
+        }
+
+        protected void ApplyEdit_Click(object sender, EventArgs e)
+        {
+            HotelSanJavier ws = new HotelSanJavier();
+            
+            int idReservationEdited = Int32.Parse(idReservationEdit.Text.ToString());
+            string dniClientEdited = dniClientEdit.Text.ToString();
+            int idReceptionistEdited = Int32.Parse(idReceptionistEdit.Text.ToString());
+            string entryDateEdited = entryDateEdit.Text.ToString();
+            string exitDateEdited = exitDateEdit.Text.ToString();
+            int idRoomEdited = Int32.Parse(idRoomEdit.Text.ToString());
+
+            ws.editReservation(idReservationEdited, dniClientEdited,idReceptionistEdited,entryDateEdited,exitDateEdited,idRoomEdited);
+
+            Panel1.Controls.Clear();
+            Panel2.Controls.Clear();
+            Panel4.Controls.Clear();
+            Page_Load(this, null);
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            HotelSanJavier ws = new HotelSanJavier();
+            DataTable clientToEditData = ws.getClient(dniClientUpdate.Text.ToString());
+            dniClientUpdate.Enabled = false;
+            passwordClientUpdate.Visible = true;
+            telephoneClientUpdate.Visible = true;
+            nameClietnUpdate.Visible = true;
+            surnameClientUpdate.Visible = true;
+            emailClientUpdate.Visible = true;
+
+            if (Int32.Parse(Session["idReceptionist"].ToString()) != 1)
+            {
+                idReceptionistClientUpdate.Visible = true;
+                idReceptionistClientUpdate.Enabled = false;
+            }
+            else
+            {
+                idReceptionistClientUpdate.Visible = true;
+            }
+
+            foreach (DataRow dr in clientToEditData.Rows)
+            {
+                passwordClientUpdate.Text = dr["password"].ToString();
+                telephoneClientUpdate.Text = dr["telephone"].ToString();
+                nameClietnUpdate.Text = dr["name"].ToString();
+                surnameClientUpdate.Text = dr["surname"].ToString();
+                emailClientUpdate.Text = dr["email"].ToString();
+            }
+            idReceptionistClientUpdate.Text = Session["idReceptionist"].ToString();
+            ApplyClientUpdate.Visible = true;
+        }
+
+        protected void ApplyClientUpdate_Click(object sender, EventArgs e)
+        {
+            HotelSanJavier ws = new HotelSanJavier();
+
+            string dniClientEdited = dniClientUpdate.Text.ToString();
+            string passClientEdited = passwordClientUpdate.Text.ToString();
+            int telefClientEdited = Int32.Parse(telephoneClientUpdate.Text.ToString());
+            string nameCliendEdited = nameClietnUpdate.Text.ToString();
+            string surnameClientEdited = surnameClientUpdate.Text.ToString();
+            string emailClientEdited = emailClientUpdate.Text.ToString();
+            int idReceptcionistEdited = Int32.Parse(Session["idReceptionist"].ToString());
+
+            ws.editClient(dniClientEdited,passClientEdited,telefClientEdited,nameCliendEdited,surnameClientEdited,emailClientEdited,idReceptcionistEdited);
+
+            Panel1.Controls.Clear();
+            Panel2.Controls.Clear();
+            Panel4.Controls.Clear();
+            Page_Load(this, null);
         }
     }
 }

@@ -276,13 +276,13 @@ namespace HotelSanJavaierWeb
         protected global::System.Web.UI.WebControls.TextBox idReceptionistEdit;
 
         /// <summary>
-        /// Control entryDateDate.
+        /// Control entryDateEdit.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox entryDateDate;
+        protected global::System.Web.UI.WebControls.TextBox entryDateEdit;
 
         /// <summary>
         /// Control exitDateEdit.
@@ -294,13 +294,13 @@ namespace HotelSanJavaierWeb
         protected global::System.Web.UI.WebControls.TextBox exitDateEdit;
 
         /// <summary>
-        /// Control idRoomDate.
+        /// Control idRoomEdit.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox idRoomDate;
+        protected global::System.Web.UI.WebControls.TextBox idRoomEdit;
 
         /// <summary>
         /// Control ApplyEdit.
@@ -319,6 +319,87 @@ namespace HotelSanJavaierWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button EditClient;
+
+        /// <summary>
+        /// Control dniClientUpdate.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox dniClientUpdate;
+
+        /// <summary>
+        /// Control findClientUpdate.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button findClientUpdate;
+
+        /// <summary>
+        /// Control passwordClientUpdate.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox passwordClientUpdate;
+
+        /// <summary>
+        /// Control telephoneClientUpdate.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox telephoneClientUpdate;
+
+        /// <summary>
+        /// Control nameClietnUpdate.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox nameClietnUpdate;
+
+        /// <summary>
+        /// Control surnameClientUpdate.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox surnameClientUpdate;
+
+        /// <summary>
+        /// Control emailClientUpdate.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox emailClientUpdate;
+
+        /// <summary>
+        /// Control idReceptionistClientUpdate.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox idReceptionistClientUpdate;
+
+        /// <summary>
+        /// Control ApplyClientUpdate.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ApplyClientUpdate;
 
         /// <summary>
         /// Control EditReceptionist.
